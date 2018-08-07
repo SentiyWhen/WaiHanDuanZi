@@ -11,6 +11,7 @@
 		F854ED712119478C001001B6 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = F854ED702119478C001001B6 /* UIView+Frame.m */; };
 		F854ED7521197CC7001001B6 /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = F854ED7421197CC7001001B6 /* UIBarButtonItem+Item.m */; };
 		F854ED792119907D001001B6 /* XMGNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F854ED782119907D001001B6 /* XMGNavigationViewController.m */; };
+		F854ED7E21199464001001B6 /* XMGSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F854ED7D21199464001001B6 /* XMGSettingViewController.m */; };
 		F885919F2114481D00DC8112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F885919D2114481D00DC8112 /* Main.storyboard */; };
 		F88591A12114481F00DC8112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88591A02114481F00DC8112 /* Assets.xcassets */; };
 		F88591A42114481F00DC8112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88591A22114481F00DC8112 /* LaunchScreen.storyboard */; };
@@ -46,6 +47,8 @@
 		F854ED7421197CC7001001B6 /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
 		F854ED772119907D001001B6 /* XMGNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGNavigationViewController.h; sourceTree = "<group>"; };
 		F854ED782119907D001001B6 /* XMGNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGNavigationViewController.m; sourceTree = "<group>"; };
+		F854ED7C21199464001001B6 /* XMGSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGSettingViewController.h; sourceTree = "<group>"; };
+		F854ED7D21199464001001B6 /* XMGSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGSettingViewController.m; sourceTree = "<group>"; };
 		F88591942114481D00DC8112 /* WaiHanDuanZi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaiHanDuanZi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F885919E2114481D00DC8112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F88591A02114481F00DC8112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +94,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F854ED7A21199443001001B6 /* Setting(设置) */ = {
+			isa = PBXGroup;
+			children = (
+				F854ED7B21199443001001B6 /* Controller */,
+			);
+			path = "Setting(设置)";
+			sourceTree = "<group>";
+		};
+		F854ED7B21199443001001B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F854ED7C21199464001001B6 /* XMGSettingViewController.h */,
+				F854ED7D21199464001001B6 /* XMGSettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F885918B2114481D00DC8112 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +153,7 @@
 		F885924D21182D2000DC8112 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F854ED7A21199443001001B6 /* Setting(设置) */,
 				F885927721182E5B00DC8112 /* Main */,
 				F885924E21182D2000DC8112 /* Essence(精华) */,
 				F885925821182D2000DC8112 /* New(新帖) */,
@@ -410,6 +431,7 @@
 				F885927021182D2000DC8112 /* XMGEssenceViewController.m in Sources */,
 				F885927621182D2000DC8112 /* XMGPublishViewController.m in Sources */,
 				F88592862118350400DC8112 /* UIImage+Image.m in Sources */,
+				F854ED7E21199464001001B6 /* XMGSettingViewController.m in Sources */,
 				F885927421182D2000DC8112 /* XMGFriendTrendViewController.m in Sources */,
 				F885927F21182EB600DC8112 /* XMGTabBarController.m in Sources */,
 				F854ED792119907D001001B6 /* XMGNavigationViewController.m in Sources */,

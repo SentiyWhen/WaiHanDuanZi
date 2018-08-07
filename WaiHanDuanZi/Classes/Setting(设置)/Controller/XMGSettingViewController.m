@@ -1,58 +1,32 @@
 //
-//  XMGMeViewController.m
+//  XMGSettingViewController.m
 //  WaiHanDuanZi
 //
-//  Created by 张文文 on 2018/8/6.
+//  Created by 张文文 on 2018/8/7.
 //  Copyright © 2018年 zww. All rights reserved.
 //
 
-#import "XMGMeViewController.h"
 #import "XMGSettingViewController.h"
-/*
- 搭建基本结构 -> 设置底部条 -> 设置顶部条 -> 设置顶部条标题字体 -> 处理导航控制器业务逻辑(跳转)
- 
- */
-@interface XMGMeViewController ()
+
+@interface XMGSettingViewController ()
 
 @end
 
-@implementation XMGMeViewController
+@implementation XMGSettingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // 设置导航条
-    [self setupNavBar];
     
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)setupNavBar
-{
-    // 设置
-    UIBarButtonItem *settingItem =  [UIBarButtonItem itemWithimage:[UIImage imageNamed:@"mine-setting-icon"] highImage:[UIImage imageNamed:@"mine-setting-icon-click"] target:self action:@selector(setting)];
-    
-    // 夜间模型
-    UIBarButtonItem *nightItem =  [UIBarButtonItem itemWithimage:[UIImage imageNamed:@"mine-moon-icon"] selImage:[UIImage imageNamed:@"mine-moon-icon-click"] target:self action:@selector(night:)];
-    
-    self.navigationItem.rightBarButtonItems = @[settingItem,nightItem];
-    
-    // titleView
-    self.navigationItem.title = @"我的";
-}
-
-- (void)night:(UIButton *)button
-{
-    button.selected = !button.selected;
-}
-
-- (void)setting
-{
-    //跳转到设置界面
-    XMGSettingViewController *settingVc = [[XMGSettingViewController alloc] init];
-    //隐藏底部条 必须在跳转之前设置
-    settingVc.hidesBottomBarWhenPushed = YES;
-    
-    [self.navigationController pushViewController:settingVc animated:YES];
-    
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
