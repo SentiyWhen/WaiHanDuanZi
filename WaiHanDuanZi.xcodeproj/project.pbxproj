@@ -10,6 +10,7 @@
 		F854ED6E211932BC001001B6 /* XMGTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F854ED6D211932BC001001B6 /* XMGTabBar.m */; };
 		F854ED712119478C001001B6 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = F854ED702119478C001001B6 /* UIView+Frame.m */; };
 		F854ED7521197CC7001001B6 /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = F854ED7421197CC7001001B6 /* UIBarButtonItem+Item.m */; };
+		F854ED792119907D001001B6 /* XMGNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F854ED782119907D001001B6 /* XMGNavigationViewController.m */; };
 		F885919F2114481D00DC8112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F885919D2114481D00DC8112 /* Main.storyboard */; };
 		F88591A12114481F00DC8112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88591A02114481F00DC8112 /* Assets.xcassets */; };
 		F88591A42114481F00DC8112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88591A22114481F00DC8112 /* LaunchScreen.storyboard */; };
@@ -43,6 +44,8 @@
 		F854ED7221194944001001B6 /* WaiHanDuanZi.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaiHanDuanZi.pch; sourceTree = "<group>"; };
 		F854ED7321197CC7001001B6 /* UIBarButtonItem+Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Item.h"; sourceTree = "<group>"; };
 		F854ED7421197CC7001001B6 /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
+		F854ED772119907D001001B6 /* XMGNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGNavigationViewController.h; sourceTree = "<group>"; };
+		F854ED782119907D001001B6 /* XMGNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGNavigationViewController.m; sourceTree = "<group>"; };
 		F88591942114481D00DC8112 /* WaiHanDuanZi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaiHanDuanZi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F885919E2114481D00DC8112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F88591A02114481F00DC8112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,8 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				F885924F21182D2000DC8112 /* Controller */,
-				F885925221182D2000DC8112 /* Model */,
-				F885925321182D2000DC8112 /* View */,
 			);
 			path = "Essence(精华)";
 			sourceTree = "<group>";
@@ -158,20 +159,6 @@
 				F885925121182D2000DC8112 /* XMGEssenceViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		F885925221182D2000DC8112 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F885925321182D2000DC8112 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F885925421182D2000DC8112 /* Other */ = {
@@ -190,8 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				F885925921182D2000DC8112 /* Controller */,
-				F885925C21182D2000DC8112 /* Model */,
-				F885925D21182D2000DC8112 /* View */,
 			);
 			path = "New(新帖)";
 			sourceTree = "<group>";
@@ -205,26 +190,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F885925C21182D2000DC8112 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F885925D21182D2000DC8112 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		F885925E21182D2000DC8112 /* FriendTrend(关注) */ = {
 			isa = PBXGroup;
 			children = (
 				F885925F21182D2000DC8112 /* Controller */,
-				F885926221182D2000DC8112 /* Model */,
-				F885926321182D2000DC8112 /* View */,
 			);
 			path = "FriendTrend(关注)";
 			sourceTree = "<group>";
@@ -238,26 +207,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F885926221182D2000DC8112 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F885926321182D2000DC8112 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		F885926421182D2000DC8112 /* Me(我) */ = {
 			isa = PBXGroup;
 			children = (
 				F885926521182D2000DC8112 /* Controller */,
-				F885926821182D2000DC8112 /* Model */,
-				F885926921182D2000DC8112 /* View */,
 			);
 			path = "Me(我)";
 			sourceTree = "<group>";
@@ -269,20 +222,6 @@
 				F885926621182D2000DC8112 /* XMGMeViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		F885926821182D2000DC8112 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F885926921182D2000DC8112 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F885926A21182D2000DC8112 /* Publish(发布) */ = {
@@ -322,7 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				F885927A21182E7D00DC8112 /* Controller */,
-				F885927C21182E8E00DC8112 /* Model */,
 				F885927821182E6300DC8112 /* View */,
 			);
 			path = Main;
@@ -340,17 +278,12 @@
 		F885927A21182E7D00DC8112 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F854ED772119907D001001B6 /* XMGNavigationViewController.h */,
+				F854ED782119907D001001B6 /* XMGNavigationViewController.m */,
 				F885927D21182EB600DC8112 /* XMGTabBarController.h */,
 				F885927E21182EB600DC8112 /* XMGTabBarController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		F885927C21182E8E00DC8112 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		F88592802118347500DC8112 /* Category */ = {
@@ -479,6 +412,7 @@
 				F88592862118350400DC8112 /* UIImage+Image.m in Sources */,
 				F885927421182D2000DC8112 /* XMGFriendTrendViewController.m in Sources */,
 				F885927F21182EB600DC8112 /* XMGTabBarController.m in Sources */,
+				F854ED792119907D001001B6 /* XMGNavigationViewController.m in Sources */,
 				F885927521182D2000DC8112 /* XMGMeViewController.m in Sources */,
 				F885927321182D2000DC8112 /* XMGNewViewController.m in Sources */,
 				F885927221182D2000DC8112 /* AppDelegate.m in Sources */,

@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // 设置导航条
     [self setupNavBar];
     
@@ -39,7 +38,6 @@
 - (void)night:(UIButton *)button
 {
     button.selected = !button.selected;
-    
 }
 
 - (void)setting

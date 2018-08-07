@@ -14,6 +14,7 @@
 #import "XMGPublishViewController.h"
 #import "XMGFriendTrendViewController.h"
 #import "XMGTabBar.h"
+#import "XMGNavigationViewController.h"
 
 
 @interface XMGTabBarController ()
@@ -78,20 +79,20 @@
 - (void)setupAllChildVC {
     //精华
     XMGEssenceViewController *essenceVc = [[XMGEssenceViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:essenceVc];
+    XMGNavigationViewController *nav = [[XMGNavigationViewController alloc] initWithRootViewController:essenceVc];
     [self addChildViewController:nav];
     //新帖
     XMGNewViewController *newVc = [[XMGNewViewController alloc] init];
-    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:newVc];
+    XMGNavigationViewController *nav1 = [[XMGNavigationViewController alloc] initWithRootViewController:newVc];
     [self addChildViewController:nav1];
     
     //关注
     XMGFriendTrendViewController *ftVc = [[XMGFriendTrendViewController alloc] init];
-    UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:ftVc];
+    XMGNavigationViewController *nav3 = [[XMGNavigationViewController alloc] initWithRootViewController:ftVc];
     [self addChildViewController:nav3];
     //我
     XMGMeViewController *meVc = [[XMGMeViewController alloc] init];
-    UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:meVc];
+    XMGNavigationViewController *nav4 = [[XMGNavigationViewController alloc] initWithRootViewController:meVc];
     [self addChildViewController:nav4];
 }
 
