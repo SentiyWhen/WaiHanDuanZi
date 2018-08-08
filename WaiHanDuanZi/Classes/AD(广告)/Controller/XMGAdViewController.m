@@ -8,6 +8,9 @@
 
 #import "XMGAdViewController.h"
 #import <AFNetworking/AFNetworking.h>
+#import <MJExtension/MJExtension.h>
+#import <UIImageView+WebCache.h>
+#import "XMGADItem.h"
 
 /*
  1.广告业务逻辑
@@ -20,10 +23,36 @@
 @interface XMGAdViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *launchImageView;
 @property (weak, nonatomic) IBOutlet UIView *adContainView;
+@property (strong, nonatomic) XMGADItem *item;
+@property (weak, nonatomic) UIImageView *adView;
 
 @end
 
 @implementation XMGAdViewController
+
+- (UIImageView *)adView{
+    if (_adView == nil) {
+        UIImageView *imageView = [[UIImageView alloc] init];
+        [self.adContainView addSubview:imageView];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
+        [imageView addGestureRecognizer:tap];
+        imageView.userInteractionEnabled = YES;
+        _adView = imageView;
+        
+    }
+    return _adView;
+}
+
+//点击广告界面调用
+- (void)tap{
+    //跳转到界面----Safari
+    NSURL *url = [NSURL URLWithString:_item.ori_curl];
+    UIApplication *app = [UIApplication sharedApplication];
+    if ([app canOpenURL:url]) {
+        [app openURL:url];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,8 +74,21 @@
     
     parameters[@"code2"] = code2;
     //3.发送请求
-    [mgr GET:@"http://mobads.baidu.com/cpro/ui/mads.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        XMGLog(@"%@",responseObject);
+    [mgr GET:@"http://mobads.baidu.com/cpro/ui/mads.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable responseObject) {
+        [responseObject writeToFile:@"/Users/zhangwenwen/iOS/WaiHanDuanZi/ad.plist" atomically:YES];
+        // 请求数据 -> 解析数据(写成plist文件) -> 设计模型 -> 字典转模型 -> 展示数据
+        //获取字典
+        NSDictionary *adDict = [responseObject[@"ad"] lastObject];
+        //字典转模型
+        _item = [XMGADItem mj_objectWithKeyValues:adDict];
+        //创建uiimageview展示图片
+        CGFloat h = XMGScreenW / _item.w * _item.h;
+        self.adView.frame = CGRectMake(0, 0, XMGScreenW, h);
+        //加载网页广告
+        [self.adView sd_setImageWithURL:[NSURL URLWithString:_item.w_picurl]];
+        
+        
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         XMGLog(@"%@",error);
     }];

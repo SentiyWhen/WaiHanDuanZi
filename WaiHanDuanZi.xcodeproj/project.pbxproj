@@ -22,6 +22,7 @@
 		F854EDA1211ABC37001001B6 /* LaunchImage-700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F854ED9A211ABC37001001B6 /* LaunchImage-700@2x.png */; };
 		F854EDA2211ABC37001001B6 /* LaunchImage-700-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F854ED9B211ABC37001001B6 /* LaunchImage-700-568h@2x.png */; };
 		F854EDA3211ABC37001001B6 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F854ED9C211ABC37001001B6 /* LaunchImage.png */; };
+		F854EDA7211B3750001001B6 /* XMGADItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F854EDA6211B3750001001B6 /* XMGADItem.m */; };
 		F885919F2114481D00DC8112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F885919D2114481D00DC8112 /* Main.storyboard */; };
 		F88591A12114481F00DC8112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88591A02114481F00DC8112 /* Assets.xcassets */; };
 		F88591A42114481F00DC8112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88591A22114481F00DC8112 /* LaunchScreen.storyboard */; };
@@ -72,6 +73,8 @@
 		F854ED9A211ABC37001001B6 /* LaunchImage-700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700@2x.png"; sourceTree = "<group>"; };
 		F854ED9B211ABC37001001B6 /* LaunchImage-700-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700-568h@2x.png"; sourceTree = "<group>"; };
 		F854ED9C211ABC37001001B6 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
+		F854EDA5211B3750001001B6 /* XMGADItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGADItem.h; sourceTree = "<group>"; };
+		F854EDA6211B3750001001B6 /* XMGADItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGADItem.m; sourceTree = "<group>"; };
 		F88591942114481D00DC8112 /* WaiHanDuanZi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaiHanDuanZi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F885919E2114481D00DC8112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F88591A02114481F00DC8112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +158,7 @@
 		F854ED7F211A9497001001B6 /* AD(广告) */ = {
 			isa = PBXGroup;
 			children = (
+				F854EDA4211B372F001001B6 /* Model */,
 				F854ED80211A94B1001001B6 /* Controller */,
 			);
 			path = "AD(广告)";
@@ -182,6 +186,15 @@
 				F854ED9C211ABC37001001B6 /* LaunchImage.png */,
 			);
 			path = "启动图片";
+			sourceTree = "<group>";
+		};
+		F854EDA4211B372F001001B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F854EDA5211B3750001001B6 /* XMGADItem.h */,
+				F854EDA6211B3750001001B6 /* XMGADItem.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F885918B2114481D00DC8112 = {
@@ -567,6 +580,7 @@
 				F885927021182D2000DC8112 /* XMGEssenceViewController.m in Sources */,
 				F885927621182D2000DC8112 /* XMGPublishViewController.m in Sources */,
 				F88592862118350400DC8112 /* UIImage+Image.m in Sources */,
+				F854EDA7211B3750001001B6 /* XMGADItem.m in Sources */,
 				F854ED7E21199464001001B6 /* XMGSettingViewController.m in Sources */,
 				F885927421182D2000DC8112 /* XMGFriendTrendViewController.m in Sources */,
 				F854ED84211A94D8001001B6 /* XMGAdViewController.m in Sources */,
@@ -732,6 +746,7 @@
 			baseConfigurationReference = 2330B65438534A7B2CB7C066 /* Pods-WaiHanDuanZi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VN2WB3SJ34;
 				GCC_PREFIX_HEADER = WaiHanDuanZi/Classes/Other/WaiHanDuanZi.pch;
@@ -749,6 +764,7 @@
 			baseConfigurationReference = 168681E41D1A532C966E8F6B /* Pods-WaiHanDuanZi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VN2WB3SJ34;
 				GCC_PREFIX_HEADER = WaiHanDuanZi/Classes/Other/WaiHanDuanZi.pch;
