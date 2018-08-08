@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DAAB772528A49A78255E32DC /* libPods-WaiHanDuanZi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 624E00305601F71C048A7516 /* libPods-WaiHanDuanZi.a */; };
 		F854ED6E211932BC001001B6 /* XMGTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F854ED6D211932BC001001B6 /* XMGTabBar.m */; };
 		F854ED712119478C001001B6 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = F854ED702119478C001001B6 /* UIView+Frame.m */; };
 		F854ED7521197CC7001001B6 /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = F854ED7421197CC7001001B6 /* UIBarButtonItem+Item.m */; };
@@ -47,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		168681E41D1A532C966E8F6B /* Pods-WaiHanDuanZi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaiHanDuanZi.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaiHanDuanZi/Pods-WaiHanDuanZi.release.xcconfig"; sourceTree = "<group>"; };
+		2330B65438534A7B2CB7C066 /* Pods-WaiHanDuanZi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaiHanDuanZi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaiHanDuanZi/Pods-WaiHanDuanZi.debug.xcconfig"; sourceTree = "<group>"; };
+		624E00305601F71C048A7516 /* libPods-WaiHanDuanZi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WaiHanDuanZi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F854ED6C211932BC001001B6 /* XMGTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTabBar.h; sourceTree = "<group>"; };
 		F854ED6D211932BC001001B6 /* XMGTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTabBar.m; sourceTree = "<group>"; };
 		F854ED6F2119478C001001B6 /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAAB772528A49A78255E32DC /* libPods-WaiHanDuanZi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +118,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E298681512D25B6F4F9F6B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				624E00305601F71C048A7516 /* libPods-WaiHanDuanZi.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90E4B7FF5E28FA14347FBE2C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2330B65438534A7B2CB7C066 /* Pods-WaiHanDuanZi.debug.xcconfig */,
+				168681E41D1A532C966E8F6B /* Pods-WaiHanDuanZi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F854ED7A21199443001001B6 /* Setting(设置) */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +190,8 @@
 				F88591962114481D00DC8112 /* WaiHanDuanZi */,
 				F88591AF2114481F00DC8112 /* WaiHanDuanZiUITests */,
 				F88591952114481D00DC8112 /* Products */,
+				90E4B7FF5E28FA14347FBE2C /* Pods */,
+				4E298681512D25B6F4F9F6B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -380,9 +404,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F88591B52114481F00DC8112 /* Build configuration list for PBXNativeTarget "WaiHanDuanZi" */;
 			buildPhases = (
+				7476FB232F5CC7F4BA518753 /* [CP] Check Pods Manifest.lock */,
 				F88591902114481D00DC8112 /* Sources */,
 				F88591912114481D00DC8112 /* Frameworks */,
 				F88591922114481D00DC8112 /* Resources */,
+				361D8D08D3C41F8345C2702D /* [CP] Embed Pods Frameworks */,
+				A84C12180B76CA4E784E603A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -480,6 +507,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		361D8D08D3C41F8345C2702D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaiHanDuanZi/Pods-WaiHanDuanZi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7476FB232F5CC7F4BA518753 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A84C12180B76CA4E784E603A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaiHanDuanZi/Pods-WaiHanDuanZi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F88591902114481D00DC8112 /* Sources */ = {
@@ -654,6 +729,7 @@
 		};
 		F88591B62114481F00DC8112 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2330B65438534A7B2CB7C066 /* Pods-WaiHanDuanZi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -670,6 +746,7 @@
 		};
 		F88591B72114481F00DC8112 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 168681E41D1A532C966E8F6B /* Pods-WaiHanDuanZi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
