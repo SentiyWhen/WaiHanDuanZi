@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "XMGTabBarController.h"
+#import "XMGAdViewController.h"
 
 /*
  优先级:LaunchScreen > LaunchImage
@@ -42,8 +43,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     //2.设置窗口根控制器
-    XMGTabBarController *tabBarVc = [[XMGTabBarController alloc] init];
-    self.window.rootViewController = tabBarVc;
+//    XMGTabBarController *tabBarVc = [[XMGTabBarController alloc] init];
+    XMGAdViewController *adVc = [[XMGAdViewController alloc] init];
+    
+    self.window.rootViewController = adVc;
     
     //3.显示窗口
     [self.window makeKeyAndVisible];
