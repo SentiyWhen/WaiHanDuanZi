@@ -18,6 +18,9 @@
 #import <AFNetworking/AFNetworking.h>
 #import "XMGSubTagItem.h"
 #import <MJExtension/MJExtension.h>
+#import "XMGSubTagCell.h"
+
+static NSString * const ID = @"cell";
 
 @interface XMGSubTagViewController ()
 
@@ -33,6 +36,9 @@
     // 展示标签数据 -> 请求数据(接口文档) -> 解析数据(写成Plist)(image_list,sub_number,theme_name) -> 设计模型 -> 字典转模型 -> 展示数据
 //    [self loadData];
     [self loadMockData];
+    
+    //注册cell
+    [self.tableView registerNib:[UINib nibWithNibName:@"XMGSubTagCell" bundle:nil] forCellReuseIdentifier:ID];
 }
 
 - (void)loadMockData{
@@ -81,18 +87,20 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *ID = @"cell";
-    // 自定义cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
+    // 自定义cell
+    XMGSubTagCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    
+    
     // 获取模型
     XMGSubTagItem *item = self.subTags[indexPath.row];
-    cell.textLabel.text = item.theme_name;
+    cell.item = item;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
 }
 
 @end

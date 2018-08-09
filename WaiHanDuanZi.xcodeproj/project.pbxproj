@@ -39,6 +39,8 @@
 		F885927621182D2000DC8112 /* XMGPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F885926C21182D2000DC8112 /* XMGPublishViewController.m */; };
 		F885927F21182EB600DC8112 /* XMGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F885927E21182EB600DC8112 /* XMGTabBarController.m */; };
 		F88592862118350400DC8112 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = F88592852118350400DC8112 /* UIImage+Image.m */; };
+		F8B33F80211C203F00AB3557 /* XMGSubTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B33F7E211C203F00AB3557 /* XMGSubTagCell.m */; };
+		F8B33F81211C203F00AB3557 /* XMGSubTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B33F7F211C203F00AB3557 /* XMGSubTagCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,9 @@
 		F885927E21182EB600DC8112 /* XMGTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTabBarController.m; sourceTree = "<group>"; };
 		F88592842118350400DC8112 /* UIImage+Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
 		F88592852118350400DC8112 /* UIImage+Image.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		F8B33F7D211C203F00AB3557 /* XMGSubTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGSubTagCell.h; sourceTree = "<group>"; };
+		F8B33F7E211C203F00AB3557 /* XMGSubTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGSubTagCell.m; sourceTree = "<group>"; };
+		F8B33F7F211C203F00AB3557 /* XMGSubTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGSubTagCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +310,7 @@
 		F885925821182D2000DC8112 /* New(新帖) */ = {
 			isa = PBXGroup;
 			children = (
+				F8B33F7C211C201200AB3557 /* View */,
 				F854EDAB211B5EBA001001B6 /* Model */,
 				F885925921182D2000DC8112 /* Controller */,
 			);
@@ -431,6 +437,16 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		F8B33F7C211C201200AB3557 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8B33F7D211C203F00AB3557 /* XMGSubTagCell.h */,
+				F8B33F7E211C203F00AB3557 /* XMGSubTagCell.m */,
+				F8B33F7F211C203F00AB3557 /* XMGSubTagCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -525,6 +541,7 @@
 				F885919F2114481D00DC8112 /* Main.storyboard in Resources */,
 				F854EDA0211ABC37001001B6 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				F854ED9E211ABC37001001B6 /* LaunchImage-568h@2x.png in Resources */,
+				F8B33F81211C203F00AB3557 /* XMGSubTagCell.xib in Resources */,
 				F854EDA2211ABC37001001B6 /* LaunchImage-700-568h@2x.png in Resources */,
 				F854EDA1211ABC37001001B6 /* LaunchImage-700@2x.png in Resources */,
 				F854ED9F211ABC37001001B6 /* LaunchImage-800-667h@2x.png in Resources */,
@@ -599,6 +616,7 @@
 				F854ED6E211932BC001001B6 /* XMGTabBar.m in Sources */,
 				F854ED7521197CC7001001B6 /* UIBarButtonItem+Item.m in Sources */,
 				F885927121182D2000DC8112 /* main.m in Sources */,
+				F8B33F80211C203F00AB3557 /* XMGSubTagCell.m in Sources */,
 				F854EDAA211B5C83001001B6 /* XMGSubTagViewController.m in Sources */,
 				F885927021182D2000DC8112 /* XMGEssenceViewController.m in Sources */,
 				F885927621182D2000DC8112 /* XMGPublishViewController.m in Sources */,
