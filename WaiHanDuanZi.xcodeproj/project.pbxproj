@@ -23,6 +23,9 @@
 		F854EDA2211ABC37001001B6 /* LaunchImage-700-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F854ED9B211ABC37001001B6 /* LaunchImage-700-568h@2x.png */; };
 		F854EDA3211ABC37001001B6 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F854ED9C211ABC37001001B6 /* LaunchImage.png */; };
 		F854EDA7211B3750001001B6 /* XMGADItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F854EDA6211B3750001001B6 /* XMGADItem.m */; };
+		F854EDAA211B5C83001001B6 /* XMGSubTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F854EDA9211B5C83001001B6 /* XMGSubTagViewController.m */; };
+		F854EDAE211B5EDA001001B6 /* XMGSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F854EDAD211B5EDA001001B6 /* XMGSubTagItem.m */; };
+		F854EDB0211BE6B2001001B6 /* topic.json in Resources */ = {isa = PBXBuildFile; fileRef = F854EDAF211BE6B2001001B6 /* topic.json */; };
 		F885919F2114481D00DC8112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F885919D2114481D00DC8112 /* Main.storyboard */; };
 		F88591A12114481F00DC8112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88591A02114481F00DC8112 /* Assets.xcassets */; };
 		F88591A42114481F00DC8112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88591A22114481F00DC8112 /* LaunchScreen.storyboard */; };
@@ -75,6 +78,11 @@
 		F854ED9C211ABC37001001B6 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		F854EDA5211B3750001001B6 /* XMGADItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGADItem.h; sourceTree = "<group>"; };
 		F854EDA6211B3750001001B6 /* XMGADItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGADItem.m; sourceTree = "<group>"; };
+		F854EDA8211B5C83001001B6 /* XMGSubTagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGSubTagViewController.h; sourceTree = "<group>"; };
+		F854EDA9211B5C83001001B6 /* XMGSubTagViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGSubTagViewController.m; sourceTree = "<group>"; };
+		F854EDAC211B5EDA001001B6 /* XMGSubTagItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGSubTagItem.h; sourceTree = "<group>"; };
+		F854EDAD211B5EDA001001B6 /* XMGSubTagItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGSubTagItem.m; sourceTree = "<group>"; };
+		F854EDAF211BE6B2001001B6 /* topic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic.json; sourceTree = SOURCE_ROOT; };
 		F88591942114481D00DC8112 /* WaiHanDuanZi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaiHanDuanZi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F885919E2114481D00DC8112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F88591A02114481F00DC8112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -197,6 +205,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F854EDAB211B5EBA001001B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F854EDAC211B5EDA001001B6 /* XMGSubTagItem.h */,
+				F854EDAD211B5EDA001001B6 /* XMGSubTagItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F885918B2114481D00DC8112 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				F885924D21182D2000DC8112 /* Classes */,
+				F854EDAF211BE6B2001001B6 /* topic.json */,
 				F885919D2114481D00DC8112 /* Main.storyboard */,
 				F88591A02114481F00DC8112 /* Assets.xcassets */,
 				F88591A22114481F00DC8112 /* LaunchScreen.storyboard */,
@@ -287,6 +305,7 @@
 		F885925821182D2000DC8112 /* New(新帖) */ = {
 			isa = PBXGroup;
 			children = (
+				F854EDAB211B5EBA001001B6 /* Model */,
 				F885925921182D2000DC8112 /* Controller */,
 			);
 			path = "New(新帖)";
@@ -297,6 +316,8 @@
 			children = (
 				F885925B21182D2000DC8112 /* XMGNewViewController.h */,
 				F885925A21182D2000DC8112 /* XMGNewViewController.m */,
+				F854EDA8211B5C83001001B6 /* XMGSubTagViewController.h */,
+				F854EDA9211B5C83001001B6 /* XMGSubTagViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -507,6 +528,7 @@
 				F854EDA2211ABC37001001B6 /* LaunchImage-700-568h@2x.png in Resources */,
 				F854EDA1211ABC37001001B6 /* LaunchImage-700@2x.png in Resources */,
 				F854ED9F211ABC37001001B6 /* LaunchImage-800-667h@2x.png in Resources */,
+				F854EDB0211BE6B2001001B6 /* topic.json in Resources */,
 				F854ED9D211ABC37001001B6 /* LaunchImage@2x.png in Resources */,
 				F854EDA3211ABC37001001B6 /* LaunchImage.png in Resources */,
 			);
@@ -577,11 +599,13 @@
 				F854ED6E211932BC001001B6 /* XMGTabBar.m in Sources */,
 				F854ED7521197CC7001001B6 /* UIBarButtonItem+Item.m in Sources */,
 				F885927121182D2000DC8112 /* main.m in Sources */,
+				F854EDAA211B5C83001001B6 /* XMGSubTagViewController.m in Sources */,
 				F885927021182D2000DC8112 /* XMGEssenceViewController.m in Sources */,
 				F885927621182D2000DC8112 /* XMGPublishViewController.m in Sources */,
 				F88592862118350400DC8112 /* UIImage+Image.m in Sources */,
 				F854EDA7211B3750001001B6 /* XMGADItem.m in Sources */,
 				F854ED7E21199464001001B6 /* XMGSettingViewController.m in Sources */,
+				F854EDAE211B5EDA001001B6 /* XMGSubTagItem.m in Sources */,
 				F885927421182D2000DC8112 /* XMGFriendTrendViewController.m in Sources */,
 				F854ED84211A94D8001001B6 /* XMGAdViewController.m in Sources */,
 				F885927F21182EB600DC8112 /* XMGTabBarController.m in Sources */,

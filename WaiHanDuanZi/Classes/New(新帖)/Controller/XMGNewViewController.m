@@ -7,6 +7,7 @@
 //
 
 #import "XMGNewViewController.h"
+#import "XMGSubTagViewController.h"
 
 @interface XMGNewViewController ()
 
@@ -34,7 +35,8 @@
 #pragma mark - 点击订阅标签调用
 - (void)tagClick
 {
-    XMGLog(@"tagClick");
+    XMGSubTagViewController *subTagVc = [[XMGSubTagViewController alloc] init];
+    [self.navigationController pushViewController:subTagVc animated:YES];
 }
 
 
