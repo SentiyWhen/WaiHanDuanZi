@@ -41,6 +41,11 @@
 		F88592862118350400DC8112 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = F88592852118350400DC8112 /* UIImage+Image.m */; };
 		F8B33F80211C203F00AB3557 /* XMGSubTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B33F7E211C203F00AB3557 /* XMGSubTagCell.m */; };
 		F8B33F81211C203F00AB3557 /* XMGSubTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B33F7F211C203F00AB3557 /* XMGSubTagCell.xib */; };
+		F8B33F85211D5BB100AB3557 /* XMGFriendTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B33F84211D5BB100AB3557 /* XMGFriendTrendViewController.xib */; };
+		F8B33F89211D611800AB3557 /* XMGLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B33F87211D611800AB3557 /* XMGLoginRegisterViewController.m */; };
+		F8B33F8A211D611800AB3557 /* XMGLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B33F88211D611800AB3557 /* XMGLoginRegisterViewController.xib */; };
+		F8B33F91211D6BF900AB3557 /* XMGLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B33F90211D6BF900AB3557 /* XMGLoginRegisterView.m */; };
+		F8B33F93211D6C0E00AB3557 /* XMGLoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B33F92211D6C0E00AB3557 /* XMGLoginRegisterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +118,13 @@
 		F8B33F7D211C203F00AB3557 /* XMGSubTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGSubTagCell.h; sourceTree = "<group>"; };
 		F8B33F7E211C203F00AB3557 /* XMGSubTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGSubTagCell.m; sourceTree = "<group>"; };
 		F8B33F7F211C203F00AB3557 /* XMGSubTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGSubTagCell.xib; sourceTree = "<group>"; };
+		F8B33F84211D5BB100AB3557 /* XMGFriendTrendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGFriendTrendViewController.xib; sourceTree = "<group>"; };
+		F8B33F86211D611800AB3557 /* XMGLoginRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGLoginRegisterViewController.h; sourceTree = "<group>"; };
+		F8B33F87211D611800AB3557 /* XMGLoginRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGLoginRegisterViewController.m; sourceTree = "<group>"; };
+		F8B33F88211D611800AB3557 /* XMGLoginRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGLoginRegisterViewController.xib; sourceTree = "<group>"; };
+		F8B33F8F211D6BF900AB3557 /* XMGLoginRegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGLoginRegisterView.h; sourceTree = "<group>"; };
+		F8B33F90211D6BF900AB3557 /* XMGLoginRegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGLoginRegisterView.m; sourceTree = "<group>"; };
+		F8B33F92211D6C0E00AB3557 /* XMGLoginRegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGLoginRegisterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				F885925F21182D2000DC8112 /* Controller */,
+				F8B33F8B211D6AED00AB3557 /* View */,
 			);
 			path = "FriendTrend(关注)";
 			sourceTree = "<group>";
@@ -341,6 +354,10 @@
 			children = (
 				F885926021182D2000DC8112 /* XMGFriendTrendViewController.h */,
 				F885926121182D2000DC8112 /* XMGFriendTrendViewController.m */,
+				F8B33F84211D5BB100AB3557 /* XMGFriendTrendViewController.xib */,
+				F8B33F86211D611800AB3557 /* XMGLoginRegisterViewController.h */,
+				F8B33F87211D611800AB3557 /* XMGLoginRegisterViewController.m */,
+				F8B33F88211D611800AB3557 /* XMGLoginRegisterViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -447,6 +464,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F8B33F8B211D6AED00AB3557 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8B33F8F211D6BF900AB3557 /* XMGLoginRegisterView.h */,
+				F8B33F90211D6BF900AB3557 /* XMGLoginRegisterView.m */,
+				F8B33F92211D6C0E00AB3557 /* XMGLoginRegisterView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -537,6 +564,8 @@
 			files = (
 				F854ED85211A94D8001001B6 /* XMGAdViewController.xib in Resources */,
 				F88591A42114481F00DC8112 /* LaunchScreen.storyboard in Resources */,
+				F8B33F8A211D611800AB3557 /* XMGLoginRegisterViewController.xib in Resources */,
+				F8B33F85211D5BB100AB3557 /* XMGFriendTrendViewController.xib in Resources */,
 				F88591A12114481F00DC8112 /* Assets.xcassets in Resources */,
 				F885919F2114481D00DC8112 /* Main.storyboard in Resources */,
 				F854EDA0211ABC37001001B6 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
@@ -547,6 +576,7 @@
 				F854ED9F211ABC37001001B6 /* LaunchImage-800-667h@2x.png in Resources */,
 				F854EDB0211BE6B2001001B6 /* topic.json in Resources */,
 				F854ED9D211ABC37001001B6 /* LaunchImage@2x.png in Resources */,
+				F8B33F93211D6C0E00AB3557 /* XMGLoginRegisterView.xib in Resources */,
 				F854EDA3211ABC37001001B6 /* LaunchImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,7 +659,9 @@
 				F885927F21182EB600DC8112 /* XMGTabBarController.m in Sources */,
 				F854ED792119907D001001B6 /* XMGNavigationViewController.m in Sources */,
 				F885927521182D2000DC8112 /* XMGMeViewController.m in Sources */,
+				F8B33F89211D611800AB3557 /* XMGLoginRegisterViewController.m in Sources */,
 				F885927321182D2000DC8112 /* XMGNewViewController.m in Sources */,
+				F8B33F91211D6BF900AB3557 /* XMGLoginRegisterView.m in Sources */,
 				F885927221182D2000DC8112 /* AppDelegate.m in Sources */,
 				F854ED712119478C001001B6 /* UIView+Frame.m in Sources */,
 			);

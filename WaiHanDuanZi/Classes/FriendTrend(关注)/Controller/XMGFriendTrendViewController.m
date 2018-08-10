@@ -7,12 +7,18 @@
 //
 
 #import "XMGFriendTrendViewController.h"
+#import "XMGLoginRegisterViewController.h"
 
 @interface XMGFriendTrendViewController ()
 
 @end
 
 @implementation XMGFriendTrendViewController
+- (IBAction)clickBtn:(id)sender {
+    //进入登陆注册页面
+    XMGLoginRegisterViewController * loginVc = [[XMGLoginRegisterViewController alloc] init];
+    [self presentViewController:loginVc animated:YES completion:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
