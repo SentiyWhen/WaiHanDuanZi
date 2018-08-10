@@ -32,6 +32,7 @@ static NSString * const ID = @"cell";
 // 接口文档: 请求url(基本url+请求参数) 请求方式
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"推荐标签";
     
     // 展示标签数据 -> 请求数据(接口文档) -> 解析数据(写成Plist)(image_list,sub_number,theme_name) -> 设计模型 -> 字典转模型 -> 展示数据
 //    [self loadData];
