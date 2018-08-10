@@ -40,6 +40,14 @@ static NSString * const ID = @"cell";
     
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"XMGSubTagCell" bundle:nil] forCellReuseIdentifier:ID];
+    
+    // 处理cell分割线 1.自定义分割线 2.系统属性(iOS8才支持) 3.万能方式(重写cell的setFrame) 了解tableView底层实现了解 1.取消系统自带分割线 2.把tableView背景色设置为分割线的背景色 3.重写setFrame
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = XMGColor(220, 220, 221);
+    
+    
+    // 清空tableView分割线内边距 清空cell的约束边缘
+//    self.tableView.separatorInset = UIEdgeInsetsZero;
 }
 
 - (void)loadMockData{

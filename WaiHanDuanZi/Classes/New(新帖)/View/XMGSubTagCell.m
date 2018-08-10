@@ -21,6 +21,13 @@
 
 @implementation XMGSubTagCell
 
+- (void)setFrame:(CGRect)frame{
+    
+    frame.size.height -= 1;
+    // 才是真正去给cell赋值
+    [super setFrame:frame];
+}
+
 - (void)setItem:(XMGSubTagItem *)item{
     _item = item;
     
@@ -28,7 +35,7 @@
     [self resolveNum];
     
 //    [_iconView sd_setImageWithURL:[NSURL URLWithString:item.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
-    [_iconView sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533876565250&di=5f969962e7d9cc4518764cd19b0cb4ca&imgtype=0&src=http%3A%2F%2Fs1.cdn.deahu.com%2Fshow%2Flfile%2F6335C0DCEC67596EA2EDEB148781CB63.jpg"] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"] options:SDWebImageCacheMemoryOnly completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [_iconView sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533876917835&di=ded9130bdd2fa0ce78a89e95dbf83a33&imgtype=0&src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fzhidao%2Fwh%253D450%252C600%2Fsign%3D607ee2109c25bc312b08099c6befa187%2F242dd42a2834349b4eb0595bccea15ce37d3bebd.jpg"] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"] options:SDWebImageCacheMemoryOnly completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         // 1.开启图形上下文
         // 比例因素:当前点与像素比例
         UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
@@ -65,7 +72,8 @@
     [super awakeFromNib];
 //    _iconView.layer.cornerRadius = 30;
 //    _iconView.layer.masksToBounds = YES;
-    // Initialization code
+
+//    self.layoutMargins = UIEdgeInsetsZero;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
