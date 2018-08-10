@@ -16,15 +16,18 @@
 
 #import "XMGSubTagViewController.h"
 #import <AFNetworking/AFNetworking.h>
-#import "XMGSubTagItem.h"
 #import <MJExtension/MJExtension.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "XMGSubTagItem.h"
 #import "XMGSubTagCell.h"
+
 
 static NSString * const ID = @"cell";
 
 @interface XMGSubTagViewController ()
 
 @property (nonatomic, strong) NSArray *subTags;
+@property (nonatomic, weak) AFHTTPSessionManager *mgr;
 
 @end
 
@@ -36,7 +39,12 @@ static NSString * const ID = @"cell";
     
     // 展示标签数据 -> 请求数据(接口文档) -> 解析数据(写成Plist)(image_list,sub_number,theme_name) -> 设计模型 -> 字典转模型 -> 展示数据
 //    [self loadData];
-    [self loadMockData];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self loadMockData];
+        
+    });
+   
     
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"XMGSubTagCell" bundle:nil] forCellReuseIdentifier:ID];
@@ -45,11 +53,18 @@ static NSString * const ID = @"cell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = XMGColor(220, 220, 221);
     
-    
+//    [SVProgressHUD showWithStatus:@"正在加载中...."];
     // 清空tableView分割线内边距 清空cell的约束边缘
 //    self.tableView.separatorInset = UIEdgeInsetsZero;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+//    [SVProgressHUD dismiss];
+    // 取消之前的请求
+    [_mgr.tasks makeObjectsPerformSelector:@selector(cancel)];
+    
+}
 - (void)loadMockData{
     NSString *path = [[NSBundle mainBundle] pathForResource:@"topic.json" ofType:nil];
     
@@ -67,6 +82,7 @@ static NSString * const ID = @"cell";
 {
     // 1.创建请求会话管理者
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    _mgr = mgr;
     // 2.拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"tag_recommend";
@@ -76,7 +92,7 @@ static NSString * const ID = @"cell";
     // 3.发送请求
     [mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nullable responseObject) {
         //        [responseObject writeToFile:@"/Users/xiaomage/Desktop/课堂共享/11大神班上课资料/08-项目/0315/代码/05-订阅标签/tag.plist" atomically:YES];
-        NSLog(@"%@",responseObject);
+//        [SVProgressHUD dismiss];
         // 字典数组转换模型数组
         _subTags = [XMGSubTagItem mj_objectArrayWithKeyValuesArray:responseObject];
         
@@ -85,6 +101,7 @@ static NSString * const ID = @"cell";
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
+//        [SVProgressHUD dismiss];
     }];
     
 }
