@@ -6,11 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XMGLoginRegisterViewController">
             <connections>
+                <outlet property="leadCons" destination="0C4-j0-XCD" id="PBf-xm-zyZ"/>
                 <outlet property="middleView" destination="1Rr-Mz-k8d" id="hxT-CH-8lI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -61,7 +63,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rr-Mz-k8d" userLabel="middle">
-                    <rect key="frame" x="0.0" y="95" width="375" height="300"/>
+                    <rect key="frame" x="0.0" y="95" width="750" height="300"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="YiL-sL-CvG"/>
@@ -86,9 +88,9 @@
                 <constraint firstAttribute="bottom" secondItem="IZk-2y-ShX" secondAttribute="bottom" constant="20" id="Lv6-lB-b5Q"/>
                 <constraint firstItem="Fda-8s-r83" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YDb-EW-IqF"/>
                 <constraint firstItem="Cyo-Mj-yeR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Z48-hW-HUv"/>
+                <constraint firstItem="1Rr-Mz-k8d" firstAttribute="width" secondItem="Cyo-Mj-yeR" secondAttribute="width" multiplier="2" id="f2P-aW-kEo"/>
                 <constraint firstAttribute="trailing" secondItem="IZk-2y-ShX" secondAttribute="trailing" id="gvp-hz-CAk"/>
                 <constraint firstItem="1Rr-Mz-k8d" firstAttribute="top" secondItem="Fda-8s-r83" secondAttribute="bottom" constant="40" id="tPs-nt-jgC"/>
-                <constraint firstAttribute="trailing" secondItem="1Rr-Mz-k8d" secondAttribute="trailing" id="wNK-sX-Qfi"/>
                 <constraint firstItem="Fda-8s-r83" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="wop-lK-XWF"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="101.5"/>
