@@ -51,6 +51,9 @@
 		F8B33FA12121262700AB3557 /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B33FA02121262700AB3557 /* UITextField+Placeholder.m */; };
 		F8B533B62121557900686925 /* XMGLoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B533B52121557900686925 /* XMGLoginRegisterView.xib */; };
 		F8B533B8212155AC00686925 /* XMGFastLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B533B7212155AB00686925 /* XMGFastLoginView.xib */; };
+		F8B533BA212159B600686925 /* XMGMeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B533B9212159B600686925 /* XMGMeViewController.storyboard */; };
+		F8B533BF2121644600686925 /* XMGSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B533BD2121644600686925 /* XMGSquareCell.m */; };
+		F8B533C02121644600686925 /* XMGSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B533BE2121644600686925 /* XMGSquareCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +142,10 @@
 		F8B33FA02121262700AB3557 /* UITextField+Placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
 		F8B533B52121557900686925 /* XMGLoginRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMGLoginRegisterView.xib; sourceTree = "<group>"; };
 		F8B533B7212155AB00686925 /* XMGFastLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMGFastLoginView.xib; sourceTree = "<group>"; };
+		F8B533B9212159B600686925 /* XMGMeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = XMGMeViewController.storyboard; sourceTree = "<group>"; };
+		F8B533BC2121644600686925 /* XMGSquareCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGSquareCell.h; sourceTree = "<group>"; };
+		F8B533BD2121644600686925 /* XMGSquareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGSquareCell.m; sourceTree = "<group>"; };
+		F8B533BE2121644600686925 /* XMGSquareCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGSquareCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,6 +386,7 @@
 		F885926421182D2000DC8112 /* Me(我) */ = {
 			isa = PBXGroup;
 			children = (
+				F8B533BB2121642200686925 /* View */,
 				F885926521182D2000DC8112 /* Controller */,
 			);
 			path = "Me(我)";
@@ -389,6 +397,7 @@
 			children = (
 				F885926721182D2000DC8112 /* XMGMeViewController.h */,
 				F885926621182D2000DC8112 /* XMGMeViewController.m */,
+				F8B533B9212159B600686925 /* XMGMeViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -497,6 +506,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F8B533BB2121642200686925 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8B533BC2121644600686925 /* XMGSquareCell.h */,
+				F8B533BD2121644600686925 /* XMGSquareCell.m */,
+				F8B533BE2121644600686925 /* XMGSquareCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -587,9 +606,11 @@
 			files = (
 				F854ED85211A94D8001001B6 /* XMGAdViewController.xib in Resources */,
 				F88591A42114481F00DC8112 /* LaunchScreen.storyboard in Resources */,
+				F8B533BA212159B600686925 /* XMGMeViewController.storyboard in Resources */,
 				F8B33F8A211D611800AB3557 /* XMGLoginRegisterViewController.xib in Resources */,
 				F8B33F85211D5BB100AB3557 /* XMGFriendTrendViewController.xib in Resources */,
 				F88591A12114481F00DC8112 /* Assets.xcassets in Resources */,
+				F8B533C02121644600686925 /* XMGSquareCell.xib in Resources */,
 				F8B533B8212155AC00686925 /* XMGFastLoginView.xib in Resources */,
 				F885919F2114481D00DC8112 /* Main.storyboard in Resources */,
 				F854EDA0211ABC37001001B6 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
@@ -674,6 +695,7 @@
 				F854EDAA211B5C83001001B6 /* XMGSubTagViewController.m in Sources */,
 				F885927021182D2000DC8112 /* XMGEssenceViewController.m in Sources */,
 				F885927621182D2000DC8112 /* XMGPublishViewController.m in Sources */,
+				F8B533BF2121644600686925 /* XMGSquareCell.m in Sources */,
 				F88592862118350400DC8112 /* UIImage+Image.m in Sources */,
 				F854EDA7211B3750001001B6 /* XMGADItem.m in Sources */,
 				F854ED7E21199464001001B6 /* XMGSettingViewController.m in Sources */,

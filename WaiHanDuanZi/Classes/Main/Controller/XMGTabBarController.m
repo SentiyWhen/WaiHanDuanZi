@@ -91,7 +91,9 @@
     XMGNavigationViewController *nav3 = [[XMGNavigationViewController alloc] initWithRootViewController:ftVc];
     [self addChildViewController:nav3];
     //我
-    XMGMeViewController *meVc = [[XMGMeViewController alloc] init];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:NSStringFromClass([XMGMeViewController class]) bundle:nil];
+    // 加载箭头指向控制器
+    XMGMeViewController *meVc = [storyboard instantiateInitialViewController];
     XMGNavigationViewController *nav4 = [[XMGNavigationViewController alloc] initWithRootViewController:meVc];
     [self addChildViewController:nav4];
 }

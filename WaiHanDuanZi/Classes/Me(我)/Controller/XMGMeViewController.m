@@ -10,9 +10,10 @@
 #import "XMGSettingViewController.h"
 /*
  搭建基本结构 -> 设置底部条 -> 设置顶部条 -> 设置顶部条标题字体 -> 处理导航控制器业务逻辑(跳转)
- 
  */
-@interface XMGMeViewController ()
+static NSString * const ID = @"cell";
+
+@interface XMGMeViewController ()<UICollectionViewDataSource>
 
 @end
 
@@ -22,11 +23,39 @@
     [super viewDidLoad];
     // 设置导航条
     [self setupNavBar];
-    
+    //设置tableView底部视图
+    [self setupFootView];
 }
 
-- (void)setupNavBar
-{
+- (void)setupFootView{
+    /*
+     1.初始化要设置流水布局
+     2.cell必须要注册
+     3.cell必须自定义
+     */
+    //创建布局
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    
+    // 设置cell尺寸
+    NSInteger cols = 4;
+    CGFloat margin = 1;
+    CGFloat itemWH = (XMGScreenW - (cols - 1) * margin) / cols;
+    layout.itemSize = CGSizeMake(itemWH, itemWH);
+    layout.minimumInteritemSpacing = margin;
+    layout.minimumLineSpacing = margin;
+    
+    //创建UiCollectionView
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 300) collectionViewLayout:layout];
+    collectionView.backgroundColor = self.tableView.backgroundColor;
+    self.tableView.tableFooterView = collectionView;
+    
+    collectionView.dataSource = self;
+    
+    //注册cell
+    [collectionView registerNib:[UINib nibWithNibName:@"XMGSquareCell" bundle:nil] forCellWithReuseIdentifier:ID];
+}
+
+- (void)setupNavBar{
     // 设置
     UIBarButtonItem *settingItem =  [UIBarButtonItem itemWithimage:[UIImage imageNamed:@"mine-setting-icon"] highImage:[UIImage imageNamed:@"mine-setting-icon-click"] target:self action:@selector(setting)];
     
@@ -39,13 +68,11 @@
     self.navigationItem.title = @"我的";
 }
 
-- (void)night:(UIButton *)button
-{
+- (void)night:(UIButton *)button{
     button.selected = !button.selected;
 }
 
-- (void)setting
-{
+- (void)setting{
     //跳转到设置界面
     XMGSettingViewController *settingVc = [[XMGSettingViewController alloc] init];
     //隐藏底部条 必须在跳转之前设置
@@ -55,70 +82,21 @@
     
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 10;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 从缓存池取
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     
     return cell;
+   
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
