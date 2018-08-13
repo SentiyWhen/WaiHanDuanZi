@@ -16,6 +16,12 @@
  2.文本框开始编辑的时候,占位文字颜色变成白色
  */
 
+/* 原始方法
+ NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
+ attrs[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
+ self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:attrs];
+ */
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -29,27 +35,18 @@
     // 结束编辑
     [self addTarget:self action:@selector(textEnd) forControlEvents:UIControlEventEditingDidEnd];
     
-//    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-//    attrs[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
-//    self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:attrs];
-    
     // 快速设置占位文字颜色
      self.placeholderColor = [UIColor lightGrayColor];
     
     // 快速设置占位文字颜色 => 文本框占位文字可能是label => 验证占位文字是label => 拿到label => 查看label属性名(1.runtime 2.断点)
-    // self.placeholderColor = [UIColor redColor];
-    
-    
 }
 
 // 文本框开始编辑调用
 - (void)textBegin
 {
-    self.placeholderColor = [UIColor whiteColor];
     // 设置占位文字颜色变成白色
-//    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-//    attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
-//    self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:attrs];
+    self.placeholderColor = [UIColor whiteColor];
+    
 }
 
 
@@ -57,9 +54,7 @@
 - (void)textEnd
 {
     self.placeholderColor = [UIColor lightGrayColor];
-//    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-//    attrs[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
-//    self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:attrs];
+
 }
 
 @end

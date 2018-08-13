@@ -12,4 +12,6 @@
 
 @property UIColor *placeholderColor;
 
+- (void)setXmg_Placeholder:(NSString *)placeholder;
+
 @end
