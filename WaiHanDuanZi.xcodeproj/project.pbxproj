@@ -50,6 +50,7 @@
 		F8B33F98211D883B00AB3557 /* XMGFastLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B33F97211D883B00AB3557 /* XMGFastLoginView.xib */; };
 		F8B33F9B21211A3600AB3557 /* XMGFastButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B33F9A21211A3600AB3557 /* XMGFastButton.m */; };
 		F8B33F9E21211E5900AB3557 /* XMGLoginField.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B33F9D21211E5900AB3557 /* XMGLoginField.m */; };
+		F8B33FA12121262700AB3557 /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B33FA02121262700AB3557 /* UITextField+Placeholder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,8 @@
 		F8B33F9A21211A3600AB3557 /* XMGFastButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGFastButton.m; sourceTree = "<group>"; };
 		F8B33F9C21211E5900AB3557 /* XMGLoginField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGLoginField.h; sourceTree = "<group>"; };
 		F8B33F9D21211E5900AB3557 /* XMGLoginField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGLoginField.m; sourceTree = "<group>"; };
+		F8B33F9F2121262700AB3557 /* UITextField+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
+		F8B33FA02121262700AB3557 /* UITextField+Placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +464,8 @@
 				F854ED702119478C001001B6 /* UIView+Frame.m */,
 				F854ED7321197CC7001001B6 /* UIBarButtonItem+Item.h */,
 				F854ED7421197CC7001001B6 /* UIBarButtonItem+Item.m */,
+				F8B33F9F2121262700AB3557 /* UITextField+Placeholder.h */,
+				F8B33FA02121262700AB3557 /* UITextField+Placeholder.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -675,6 +680,7 @@
 				F854EDAE211B5EDA001001B6 /* XMGSubTagItem.m in Sources */,
 				F8B33F9E21211E5900AB3557 /* XMGLoginField.m in Sources */,
 				F885927421182D2000DC8112 /* XMGFriendTrendViewController.m in Sources */,
+				F8B33FA12121262700AB3557 /* UITextField+Placeholder.m in Sources */,
 				F854ED84211A94D8001001B6 /* XMGAdViewController.m in Sources */,
 				F885927F21182EB600DC8112 /* XMGTabBarController.m in Sources */,
 				F854ED792119907D001001B6 /* XMGNavigationViewController.m in Sources */,
