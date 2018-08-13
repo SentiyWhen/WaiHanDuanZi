@@ -46,6 +46,10 @@
 		F8B33F8A211D611800AB3557 /* XMGLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B33F88211D611800AB3557 /* XMGLoginRegisterViewController.xib */; };
 		F8B33F91211D6BF900AB3557 /* XMGLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B33F90211D6BF900AB3557 /* XMGLoginRegisterView.m */; };
 		F8B33F93211D6C0E00AB3557 /* XMGLoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B33F92211D6C0E00AB3557 /* XMGLoginRegisterView.xib */; };
+		F8B33F96211D882A00AB3557 /* XMGFastLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B33F95211D882A00AB3557 /* XMGFastLoginView.m */; };
+		F8B33F98211D883B00AB3557 /* XMGFastLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B33F97211D883B00AB3557 /* XMGFastLoginView.xib */; };
+		F8B33F9B21211A3600AB3557 /* XMGFastButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B33F9A21211A3600AB3557 /* XMGFastButton.m */; };
+		F8B33F9E21211E5900AB3557 /* XMGLoginField.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B33F9D21211E5900AB3557 /* XMGLoginField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +129,13 @@
 		F8B33F8F211D6BF900AB3557 /* XMGLoginRegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGLoginRegisterView.h; sourceTree = "<group>"; };
 		F8B33F90211D6BF900AB3557 /* XMGLoginRegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGLoginRegisterView.m; sourceTree = "<group>"; };
 		F8B33F92211D6C0E00AB3557 /* XMGLoginRegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGLoginRegisterView.xib; sourceTree = "<group>"; };
+		F8B33F94211D882A00AB3557 /* XMGFastLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGFastLoginView.h; sourceTree = "<group>"; };
+		F8B33F95211D882A00AB3557 /* XMGFastLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGFastLoginView.m; sourceTree = "<group>"; };
+		F8B33F97211D883B00AB3557 /* XMGFastLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGFastLoginView.xib; sourceTree = "<group>"; };
+		F8B33F9921211A3600AB3557 /* XMGFastButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGFastButton.h; sourceTree = "<group>"; };
+		F8B33F9A21211A3600AB3557 /* XMGFastButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGFastButton.m; sourceTree = "<group>"; };
+		F8B33F9C21211E5900AB3557 /* XMGLoginField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGLoginField.h; sourceTree = "<group>"; };
+		F8B33F9D21211E5900AB3557 /* XMGLoginField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGLoginField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,6 +481,13 @@
 				F8B33F8F211D6BF900AB3557 /* XMGLoginRegisterView.h */,
 				F8B33F90211D6BF900AB3557 /* XMGLoginRegisterView.m */,
 				F8B33F92211D6C0E00AB3557 /* XMGLoginRegisterView.xib */,
+				F8B33F94211D882A00AB3557 /* XMGFastLoginView.h */,
+				F8B33F95211D882A00AB3557 /* XMGFastLoginView.m */,
+				F8B33F97211D883B00AB3557 /* XMGFastLoginView.xib */,
+				F8B33F9921211A3600AB3557 /* XMGFastButton.h */,
+				F8B33F9A21211A3600AB3557 /* XMGFastButton.m */,
+				F8B33F9C21211E5900AB3557 /* XMGLoginField.h */,
+				F8B33F9D21211E5900AB3557 /* XMGLoginField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -567,6 +585,7 @@
 				F8B33F8A211D611800AB3557 /* XMGLoginRegisterViewController.xib in Resources */,
 				F8B33F85211D5BB100AB3557 /* XMGFriendTrendViewController.xib in Resources */,
 				F88591A12114481F00DC8112 /* Assets.xcassets in Resources */,
+				F8B33F98211D883B00AB3557 /* XMGFastLoginView.xib in Resources */,
 				F885919F2114481D00DC8112 /* Main.storyboard in Resources */,
 				F854EDA0211ABC37001001B6 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				F854ED9E211ABC37001001B6 /* LaunchImage-568h@2x.png in Resources */,
@@ -654,6 +673,7 @@
 				F854EDA7211B3750001001B6 /* XMGADItem.m in Sources */,
 				F854ED7E21199464001001B6 /* XMGSettingViewController.m in Sources */,
 				F854EDAE211B5EDA001001B6 /* XMGSubTagItem.m in Sources */,
+				F8B33F9E21211E5900AB3557 /* XMGLoginField.m in Sources */,
 				F885927421182D2000DC8112 /* XMGFriendTrendViewController.m in Sources */,
 				F854ED84211A94D8001001B6 /* XMGAdViewController.m in Sources */,
 				F885927F21182EB600DC8112 /* XMGTabBarController.m in Sources */,
@@ -664,6 +684,8 @@
 				F8B33F91211D6BF900AB3557 /* XMGLoginRegisterView.m in Sources */,
 				F885927221182D2000DC8112 /* AppDelegate.m in Sources */,
 				F854ED712119478C001001B6 /* UIView+Frame.m in Sources */,
+				F8B33F9B21211A3600AB3557 /* XMGFastButton.m in Sources */,
+				F8B33F96211D882A00AB3557 /* XMGFastLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

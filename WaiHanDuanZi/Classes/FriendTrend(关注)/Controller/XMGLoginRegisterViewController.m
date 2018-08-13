@@ -8,10 +8,12 @@
 
 #import "XMGLoginRegisterViewController.h"
 #import "XMGLoginRegisterView.h"
+#import "XMGFastLoginView.h"
 
 @interface XMGLoginRegisterViewController ()
 @property (weak, nonatomic) IBOutlet UIView *middleView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadCons;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @end
 
@@ -37,18 +39,19 @@
      2.在viewDidLoad设置控件frame好不好,开发中一般在viewDidLayoutSubviews布局子控件
      
      */
-    
     // 创建登录view
-    XMGLoginRegisterView *loginView = [XMGLoginRegisterView loginView];
-    
     // 添加到中间的view
+    XMGLoginRegisterView *loginView = [XMGLoginRegisterView loginView];
     [self.middleView addSubview:loginView];
     
     // 添加注册界面
-    XMGLoginRegisterView *registerView = [XMGLoginRegisterView registerView];
-    
     // 添加到中间的view
+    XMGLoginRegisterView *registerView = [XMGLoginRegisterView registerView];
     [self.middleView addSubview:registerView];
+    
+    // 添加到底部的view
+    XMGFastLoginView *fastView = [XMGFastLoginView fastLoginView];
+    [self.bottomView addSubview:fastView];
     
 }
 
@@ -60,12 +63,17 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
+    // 设置登录view
     XMGLoginRegisterView *loginView = self.middleView.subviews[0];
     loginView.frame = CGRectMake(0, 0, self.middleView.xmg_width * 0.5, self.middleView.xmg_height);
     
+    // 设置注册view
     XMGLoginRegisterView *registerView = self.middleView.subviews[1];
     registerView.frame = CGRectMake( self.middleView.xmg_width * 0.5, 0,self.middleView.xmg_width * 0.5, self.middleView.xmg_height);
     
+    // 设置快速登录
+    XMGFastLoginView *fastLoginView = self.bottomView.subviews.firstObject;
+    fastLoginView.frame = self.bottomView.bounds;
 }
 
 

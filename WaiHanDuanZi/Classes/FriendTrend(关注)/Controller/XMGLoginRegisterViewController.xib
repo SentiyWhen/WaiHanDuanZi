@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XMGLoginRegisterViewController">
             <connections>
+                <outlet property="bottomView" destination="IZk-2y-ShX" id="TG7-r8-Dfl"/>
                 <outlet property="leadCons" destination="0C4-j0-XCD" id="PBf-xm-zyZ"/>
                 <outlet property="middleView" destination="1Rr-Mz-k8d" id="hxT-CH-8lI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -71,7 +72,7 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZk-2y-ShX">
                     <rect key="frame" x="0.0" y="547" width="375" height="100"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="XtA-6s-Jcu"/>
                     </constraints>
