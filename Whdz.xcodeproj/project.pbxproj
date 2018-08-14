@@ -54,6 +54,9 @@
 		F8B534A721217DAE00686925 /* XMGSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B5347921217DAE00686925 /* XMGSquareCell.m */; };
 		F8B534A821217DAE00686925 /* XMGPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B5347C21217DAE00686925 /* XMGPublishViewController.m */; };
 		F8B534AC2122633C00686925 /* XMGSquareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534AB2122633C00686925 /* XMGSquareItem.m */; };
+		F8B534B02122776800686925 /* XMGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534AE2122776800686925 /* XMGWebViewController.m */; };
+		F8B534B12122776800686925 /* XMGWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B534AF2122776800686925 /* XMGWebViewController.xib */; };
+		F8B534B3212282ED00686925 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B534B2212282EC00686925 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +150,10 @@
 		F8B5347D21217DAE00686925 /* XMGPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGPublishViewController.h; sourceTree = "<group>"; };
 		F8B534AA2122633C00686925 /* XMGSquareItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGSquareItem.h; sourceTree = "<group>"; };
 		F8B534AB2122633C00686925 /* XMGSquareItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGSquareItem.m; sourceTree = "<group>"; };
+		F8B534AD2122776800686925 /* XMGWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGWebViewController.h; sourceTree = "<group>"; };
+		F8B534AE2122776800686925 /* XMGWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGWebViewController.m; sourceTree = "<group>"; };
+		F8B534AF2122776800686925 /* XMGWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGWebViewController.xib; sourceTree = "<group>"; };
+		F8B534B2212282EC00686925 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B534B3212282ED00686925 /* WebKit.framework in Frameworks */,
 				662D1D1592146DA30CD49D76 /* libPods-Whdz.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +188,7 @@
 		D49CC8E2C9A7E60C283980A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8B534B2212282EC00686925 /* WebKit.framework */,
 				2C1CCA2DF8A2F20DD9BA1CA6 /* libPods-Whdz.a */,
 			);
 			name = Frameworks;
@@ -470,6 +479,9 @@
 				F8B5347521217DAE00686925 /* XMGMeViewController.h */,
 				F8B5347421217DAE00686925 /* XMGMeViewController.m */,
 				F8B5347321217DAE00686925 /* XMGMeViewController.storyboard */,
+				F8B534AD2122776800686925 /* XMGWebViewController.h */,
+				F8B534AE2122776800686925 /* XMGWebViewController.m */,
+				F8B534AF2122776800686925 /* XMGWebViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -620,6 +632,7 @@
 				F8B534A421217DAE00686925 /* XMGMeViewController.storyboard in Resources */,
 				F8B5349921217DAE00686925 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				F8B5349021217DAE00686925 /* XMGLoginRegisterView.xib in Resources */,
+				F8B534B12122776800686925 /* XMGWebViewController.xib in Resources */,
 				F8B5349E21217DAE00686925 /* XMGAdViewController.xib in Resources */,
 				F8B5349521217DAE00686925 /* XMGFastLoginView.xib in Resources */,
 				F8B5348F21217DAE00686925 /* XMGLoginRegisterViewController.xib in Resources */,
@@ -711,6 +724,7 @@
 				F8B5348021217DAE00686925 /* XMGEssenceViewController.m in Sources */,
 				F8B5348721217DAE00686925 /* XMGNewViewController.m in Sources */,
 				F8B534A121217DAE00686925 /* XMGNavigationViewController.m in Sources */,
+				F8B534B02122776800686925 /* XMGWebViewController.m in Sources */,
 				F8B5348A21217DAE00686925 /* XMGSubTagCell.m in Sources */,
 				F8B5348D21217DAE00686925 /* XMGFriendTrendViewController.m in Sources */,
 				F8B5349F21217DAE00686925 /* XMGAdViewController.m in Sources */,

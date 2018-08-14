@@ -13,6 +13,8 @@
 #import "XMGSquareItem.h"
 #import "XMGSquareCell.h"
 #import <SafariServices/SafariServices.h>
+#import "XMGWebViewController.h"
+
 /*
  搭建基本结构 -> 设置底部条 -> 设置顶部条 -> 设置顶部条标题字体 -> 处理导航控制器业务逻辑(跳转)
  */
@@ -149,22 +151,25 @@ static CGFloat const margin = 1;
      4.WKWebView
      1.导入#import <SafariServices/SafariServices.h>
      */
+    
     XMGSquareItem *item = self.squareItems[indexPath.row];
     if (![item.url containsString:@"http"]) return;
     
-    NSURL *url = [NSURL URLWithString:item.url];
+    XMGWebViewController *webVc = [[XMGWebViewController alloc] init];
+    webVc.url = [NSURL URLWithString:item.url];
+    [self.navigationController pushViewController:webVc animated:YES];
     
-    // SFSafariViewController使用Modal
-    SFSafariViewController *safariVc = [[SFSafariViewController alloc] initWithURL:url];
-    //    safariVc.delegate = self;
-    //    self.navigationController.navigationBarHidden = YES;
-    //    [self.navigationController pushViewController:safariVc animated:YES];
-    [self presentViewController:safariVc animated:YES completion:nil];
+//    XMGSquareItem *item = self.squareItems[indexPath.row];
+//    if (![item.url containsString:@"http"]) return;
+//    NSURL *url = [NSURL URLWithString:item.url];
+//    // SFSafariViewController使用Modal
+//    SFSafariViewController *safariVc = [[SFSafariViewController alloc] initWithURL:url];
+//    [self presentViewController:safariVc animated:YES completion:nil];
 }
 #pragma mark - SFSafariViewControllerDelegate
-- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+//- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller{
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 - (void)setupNavBar{
     // 设置
     UIBarButtonItem *settingItem =  [UIBarButtonItem itemWithimage:[UIImage imageNamed:@"mine-setting-icon"] highImage:[UIImage imageNamed:@"mine-setting-icon-click"] target:self action:@selector(setting)];
