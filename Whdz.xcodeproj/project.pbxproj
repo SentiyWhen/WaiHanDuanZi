@@ -53,6 +53,7 @@
 		F8B534A621217DAE00686925 /* XMGSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B5347821217DAE00686925 /* XMGSquareCell.xib */; };
 		F8B534A721217DAE00686925 /* XMGSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B5347921217DAE00686925 /* XMGSquareCell.m */; };
 		F8B534A821217DAE00686925 /* XMGPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B5347C21217DAE00686925 /* XMGPublishViewController.m */; };
+		F8B534AC2122633C00686925 /* XMGSquareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534AB2122633C00686925 /* XMGSquareItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,8 @@
 		F8B5347921217DAE00686925 /* XMGSquareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGSquareCell.m; sourceTree = "<group>"; };
 		F8B5347C21217DAE00686925 /* XMGPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGPublishViewController.m; sourceTree = "<group>"; };
 		F8B5347D21217DAE00686925 /* XMGPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGPublishViewController.h; sourceTree = "<group>"; };
+		F8B534AA2122633C00686925 /* XMGSquareItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGSquareItem.h; sourceTree = "<group>"; };
+		F8B534AB2122633C00686925 /* XMGSquareItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGSquareItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,16 +229,16 @@
 		F8B5342121217DAE00686925 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F8B5342221217DAE00686925 /* Essence(精华) */,
-				F8B5342621217DAE00686925 /* Other */,
-				F8B5343421217DAE00686925 /* New(新帖) */,
-				F8B5344121217DAE00686925 /* FriendTrend(关注) */,
-				F8B5345421217DAE00686925 /* 启动图片 */,
-				F8B5345C21217DAE00686925 /* Setting(设置) */,
 				F8B5346021217DAE00686925 /* AD(广告) */,
-				F8B5346821217DAE00686925 /* Main */,
+				F8B5345C21217DAE00686925 /* Setting(设置) */,
+				F8B5346821217DAE00686925 /* Main(主要) */,
+				F8B5342221217DAE00686925 /* Essence(精华) */,
 				F8B5347121217DAE00686925 /* Me(我) */,
+				F8B5344121217DAE00686925 /* FriendTrend(关注) */,
+				F8B5343421217DAE00686925 /* New(新帖) */,
 				F8B5347A21217DAE00686925 /* Publish(发布) */,
+				F8B5345421217DAE00686925 /* 启动图片 */,
+				F8B5342621217DAE00686925 /* Other */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -260,10 +263,10 @@
 		F8B5342621217DAE00686925 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				F8B5342721217DAE00686925 /* AppDelegate.h */,
 				F8B5342821217DAE00686925 /* Category */,
 				F8B5343121217DAE00686925 /* main.m */,
 				F8B5343221217DAE00686925 /* Whdz.pch */,
+				F8B5342721217DAE00686925 /* AppDelegate.h */,
 				F8B5343321217DAE00686925 /* AppDelegate.m */,
 			);
 			path = Other;
@@ -317,9 +320,9 @@
 		F8B5343D21217DAE00686925 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F8B5344021217DAE00686925 /* XMGSubTagCell.h */,
 				F8B5343E21217DAE00686925 /* XMGSubTagCell.m */,
 				F8B5343F21217DAE00686925 /* XMGSubTagCell.xib */,
-				F8B5344021217DAE00686925 /* XMGSubTagCell.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -406,9 +409,9 @@
 		F8B5346121217DAE00686925 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F8B5346221217DAE00686925 /* XMGAdViewController.xib */,
 				F8B5346321217DAE00686925 /* XMGAdViewController.h */,
 				F8B5346421217DAE00686925 /* XMGAdViewController.m */,
+				F8B5346221217DAE00686925 /* XMGAdViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -422,13 +425,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F8B5346821217DAE00686925 /* Main */ = {
+		F8B5346821217DAE00686925 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
 				F8B5346921217DAE00686925 /* Controller */,
 				F8B5346E21217DAE00686925 /* View */,
 			);
-			path = Main;
+			path = "Main(主要)";
 			sourceTree = "<group>";
 		};
 		F8B5346921217DAE00686925 /* Controller */ = {
@@ -454,6 +457,7 @@
 		F8B5347121217DAE00686925 /* Me(我) */ = {
 			isa = PBXGroup;
 			children = (
+				F8B534A92122630300686925 /* Model */,
 				F8B5347221217DAE00686925 /* Controller */,
 				F8B5347621217DAE00686925 /* View */,
 			);
@@ -463,9 +467,9 @@
 		F8B5347221217DAE00686925 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F8B5347321217DAE00686925 /* XMGMeViewController.storyboard */,
-				F8B5347421217DAE00686925 /* XMGMeViewController.m */,
 				F8B5347521217DAE00686925 /* XMGMeViewController.h */,
+				F8B5347421217DAE00686925 /* XMGMeViewController.m */,
+				F8B5347321217DAE00686925 /* XMGMeViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -474,8 +478,8 @@
 			isa = PBXGroup;
 			children = (
 				F8B5347721217DAE00686925 /* XMGSquareCell.h */,
-				F8B5347821217DAE00686925 /* XMGSquareCell.xib */,
 				F8B5347921217DAE00686925 /* XMGSquareCell.m */,
+				F8B5347821217DAE00686925 /* XMGSquareCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -511,6 +515,15 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F8B534A92122630300686925 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8B534AA2122633C00686925 /* XMGSquareItem.h */,
+				F8B534AB2122633C00686925 /* XMGSquareItem.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,6 +573,7 @@
 		F8B533F221217A3000686925 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = XMG;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = zww;
 				TargetAttributes = {
@@ -703,6 +717,7 @@
 				F8B534A021217DAE00686925 /* XMGADItem.m in Sources */,
 				F8B534A721217DAE00686925 /* XMGSquareCell.m in Sources */,
 				F8B534A521217DAE00686925 /* XMGMeViewController.m in Sources */,
+				F8B534AC2122633C00686925 /* XMGSquareItem.m in Sources */,
 				F8B534A321217DAE00686925 /* XMGTabBar.m in Sources */,
 				F8B5348621217DAE00686925 /* AppDelegate.m in Sources */,
 			);

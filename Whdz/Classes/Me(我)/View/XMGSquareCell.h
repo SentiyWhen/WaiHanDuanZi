@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class XMGSquareItem;
 @interface XMGSquareCell : UICollectionViewCell
-
+@property (nonatomic, strong) XMGSquareItem *item;
 @end

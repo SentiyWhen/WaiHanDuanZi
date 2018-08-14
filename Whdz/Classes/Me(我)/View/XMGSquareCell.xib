@@ -40,6 +40,10 @@
                 <constraint firstItem="1Pd-99-JCd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="idj-pi-awK"/>
                 <constraint firstItem="OEE-nH-C1g" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="yn8-yy-X41"/>
             </constraints>
+            <connections>
+                <outlet property="iconView" destination="1Pd-99-JCd" id="Ezp-xe-5hX"/>
+                <outlet property="nameView" destination="OEE-nH-C1g" id="MZB-DL-W2Z"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

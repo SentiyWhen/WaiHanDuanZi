@@ -10,12 +10,17 @@
 #import "XMGSettingViewController.h"
 #import <MJExtension/MJExtension.h>
 #import <AFNetworking/AFNetworking.h>
+#import "XMGSquareItem.h"
+#import "XMGSquareCell.h"
 /*
  搭建基本结构 -> 设置底部条 -> 设置顶部条 -> 设置顶部条标题字体 -> 处理导航控制器业务逻辑(跳转)
  */
 static NSString * const ID = @"cell";
 
 @interface XMGMeViewController ()<UICollectionViewDataSource>
+
+@property (nonatomic, strong) NSArray *squareItems;
+@property (nonatomic, weak) UICollectionView *collectionView;
 
 @end
 
@@ -29,6 +34,11 @@ static NSString * const ID = @"cell";
     [self setupFootView];
     //请求数据
     [self loadData];
+    /*
+     跳转细节:
+     1.collectionView高度重新计算
+     2.collectionView不需要滚动
+     */
 }
 
 #pragma mark - 请求数据
@@ -46,13 +56,13 @@ static NSString * const ID = @"cell";
     [mgr GET:@"https://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable responseObject) {
         NSLog(@"%@",responseObject);
         
-//        NSArray *dictArr = responseObject[@"square_list"];
-//
-//        // 字典数组转换成模型数组
-//        _squareItems = [XMGSquareItem mj_objectArrayWithKeyValuesArray:dictArr];
+        NSArray *dictArr = responseObject[@"square_list"];
+
+        // 字典数组转换成模型数组
+        self->_squareItems = [XMGSquareItem mj_objectArrayWithKeyValuesArray:dictArr];
 //
 //        // 刷新表格
-//        [self.collectionView reloadData];
+        [self.collectionView reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         XMGLog(@"%@",error);
@@ -80,6 +90,7 @@ static NSString * const ID = @"cell";
     
     //创建UiCollectionView
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 300) collectionViewLayout:layout];
+    _collectionView = collectionView;
     collectionView.backgroundColor = self.tableView.backgroundColor;
     self.tableView.tableFooterView = collectionView;
     
@@ -118,19 +129,17 @@ static NSString * const ID = @"cell";
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 10;
+    return self.squareItems.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // 从缓存池取
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    XMGSquareCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    cell.item = self.squareItems[indexPath.row];
     
     return cell;
    
 }
-
-
-
 
 @end
