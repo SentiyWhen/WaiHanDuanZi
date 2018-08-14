@@ -16,10 +16,12 @@
  搭建基本结构 -> 设置底部条 -> 设置顶部条 -> 设置顶部条标题字体 -> 处理导航控制器业务逻辑(跳转)
  */
 static NSString * const ID = @"cell";
-
+static NSInteger const cols = 4;
+static CGFloat const margin = 1;
+#define itemWH (XMGScreenW - (cols - 1) * margin) / cols
 @interface XMGMeViewController ()<UICollectionViewDataSource>
 
-@property (nonatomic, strong) NSArray *squareItems;
+@property (nonatomic, strong) NSMutableArray *squareItems;
 @property (nonatomic, weak) UICollectionView *collectionView;
 
 @end
@@ -54,20 +56,50 @@ static NSString * const ID = @"cell";
     
     // 3.发送请求
     [mgr GET:@"https://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable responseObject) {
-        NSLog(@"%@",responseObject);
         
         NSArray *dictArr = responseObject[@"square_list"];
 
         // 字典数组转换成模型数组
         self->_squareItems = [XMGSquareItem mj_objectArrayWithKeyValuesArray:dictArr];
-//
-//        // 刷新表格
+        
+        // 处理数据
+        [self resloveData];
+        
+        // 设置collectionView 计算collectionView高度 = rows * itemWH
+        // Rows = (count - 1) / cols + 1  3 cols4
+        NSInteger count = self->_squareItems.count;
+        NSInteger rows = (count - 1) / cols + 1;
+        // 设置collectioView高度
+        self.collectionView.xmg_height = rows * itemWH;
+        
+        // 设置tableView滚动范围:自己计算
+        self.tableView.tableFooterView = self.collectionView;
+        //        self.tableView.contentSize = CGSizeMake(0, CGRectGetMaxY(self.collectionView.frame));
+
+        // 刷新表格
         [self.collectionView reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         XMGLog(@"%@",error);
         
     }];
+    
+}
+#pragma mark - 处理请求完成数据
+- (void)resloveData
+{
+    // 判断下缺几个
+    // 3 % 4 = 3 cols - 3 = 1
+    // 5 % 4 = 1 cols - 1 = 3
+    NSInteger count = self.squareItems.count;
+    NSInteger exter = count % cols;
+    if (exter) {
+        exter = cols - exter;
+        for (int i = 0; i < exter; i++) {
+            XMGSquareItem *item = [[XMGSquareItem alloc] init];
+            [self.squareItems addObject:item];
+        }
+    }
     
 }
 
@@ -81,9 +113,7 @@ static NSString * const ID = @"cell";
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     
     // 设置cell尺寸
-    NSInteger cols = 4;
-    CGFloat margin = 1;
-    CGFloat itemWH = (XMGScreenW - (cols - 1) * margin) / cols;
+    
     layout.itemSize = CGSizeMake(itemWH, itemWH);
     layout.minimumInteritemSpacing = margin;
     layout.minimumLineSpacing = margin;
@@ -95,7 +125,7 @@ static NSString * const ID = @"cell";
     self.tableView.tableFooterView = collectionView;
     
     collectionView.dataSource = self;
-    
+    collectionView.scrollEnabled = NO;
     //注册cell
     [collectionView registerNib:[UINib nibWithNibName:@"XMGSquareCell" bundle:nil] forCellWithReuseIdentifier:ID];
 }
