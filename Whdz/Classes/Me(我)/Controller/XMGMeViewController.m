@@ -41,6 +41,27 @@ static CGFloat const margin = 1;
      1.collectionView高度重新计算
      2.collectionView不需要滚动
      */
+    
+    // 处理cell间距,默认tableView分组样式,有额外头部和尾部间距
+    self.tableView.sectionHeaderHeight = 0;
+    self.tableView.sectionFooterHeight = 10;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
+}
+// 打印cell y值
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    NSLog(@"%@",NSStringFromCGRect(cell.frame));
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    NSLog(@"%@",NSStringFromUIEdgeInsets(self.tableView.contentInset));
 }
 
 #pragma mark - 请求数据
