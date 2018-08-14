@@ -4,13 +4,14 @@
 //
 //  Created by 张文文 on 2018/8/7.
 //  Copyright © 2018年 zww. All rights reserved.
-
 #import "XMGSettingViewController.h"
 #import <SDImageCache.h>
 #import "XMGFileTool.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 #define CachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
-@interface XMGSettingViewController ()
 
+@interface XMGSettingViewController ()
+@property (nonatomic, assign) NSInteger totalSize;
 @end
 
 @implementation XMGSettingViewController
@@ -28,6 +29,19 @@ static NSString * const ID = @"cell";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"jump" style:0 target:self action:@selector(jump)];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
+    
+    [SVProgressHUD showWithStatus:@"正在计算缓存尺寸...."];
+    
+    // 获取文件夹尺寸
+    // 文件夹非常小,如果我的文件非常大
+    [XMGFileTool getFileSize:CachePath completion:^(NSInteger totalSize) {
+        
+        _totalSize = totalSize;
+        
+        [self.tableView reloadData];
+        
+        [SVProgressHUD dismiss];
+    }];
 }
 
 - (void)jump
@@ -60,18 +74,15 @@ static NSString * const ID = @"cell";
     // 删除文件夹里面所有文件
     [XMGFileTool removeDirectoryPath:CachePath];
     
+    _totalSize = 0;
+    
     [self.tableView reloadData];
 }
 
 // 获取缓存尺寸字符串
 - (NSString *)sizeStr
 {
-    // 获取Caches文件夹路径
-    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
-    
-    // 获取文件夹尺寸
-    NSInteger totalSize = [XMGFileTool getFileSize:CachePath];
-    
+    NSInteger totalSize = _totalSize;
     NSString *sizeStr = @"清除缓存";
     // MB KB B
     if (totalSize > 1000 * 1000) {
@@ -89,8 +100,6 @@ static NSString * const ID = @"cell";
     
     return sizeStr;
 }
-/*
- 业务类:以后开发中用来专门处理某件事情,网络处理,缓存处理
- */
 
 @end
+

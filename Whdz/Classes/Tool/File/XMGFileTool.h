@@ -6,8 +6,11 @@
 //  Copyright © 2018年 zww. All rights reserved.
 
 //  处理文件缓存
-
 #import <Foundation/Foundation.h>
+
+/*
+ 业务类:以后开发中用来专门处理某件事情,网络处理,缓存处理
+ */
 
 @interface XMGFileTool : NSObject
 
@@ -18,7 +21,7 @@
  *
  *  @return 返回文件夹尺寸
  */
-+ (NSInteger)getFileSize:(NSString *)directoryPath;
++ (void)getFileSize:(NSString *)directoryPath completion:(void(^)(NSInteger))completion;
 
 
 /**
@@ -30,3 +33,4 @@
 
 
 @end
+
