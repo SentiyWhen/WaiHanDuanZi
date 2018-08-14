@@ -12,6 +12,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "XMGSquareItem.h"
 #import "XMGSquareCell.h"
+#import <SafariServices/SafariServices.h>
 /*
  搭建基本结构 -> 设置底部条 -> 设置顶部条 -> 设置顶部条标题字体 -> 处理导航控制器业务逻辑(跳转)
  */
@@ -19,7 +20,7 @@ static NSString * const ID = @"cell";
 static NSInteger const cols = 4;
 static CGFloat const margin = 1;
 #define itemWH (XMGScreenW - (cols - 1) * margin) / cols
-@interface XMGMeViewController ()<UICollectionViewDataSource>
+@interface XMGMeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,SFSafariViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *squareItems;
 @property (nonatomic, weak) UICollectionView *collectionView;
@@ -47,21 +48,6 @@ static CGFloat const margin = 1;
     self.tableView.sectionFooterHeight = 10;
     
     self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
-}
-// 打印cell y值
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    NSLog(@"%@",NSStringFromCGRect(cell.frame));
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    NSLog(@"%@",NSStringFromUIEdgeInsets(self.tableView.contentInset));
 }
 
 #pragma mark - 请求数据
@@ -146,11 +132,39 @@ static CGFloat const margin = 1;
     self.tableView.tableFooterView = collectionView;
     
     collectionView.dataSource = self;
+    collectionView.delegate = self;
     collectionView.scrollEnabled = NO;
     //注册cell
     [collectionView registerNib:[UINib nibWithNibName:@"XMGSquareCell" bundle:nil] forCellWithReuseIdentifier:ID];
 }
 
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 跳转界面 push 展示网页
+    /*
+     1.Safari openURL :自带很多功能(进度条,刷新,前进,倒退等等功能),必须要跳出当前应用
+     2.UIWebView (没有功能) ,在当前应用打开网页,并且有safari,自己实现,UIWebView不能实现进度条
+     3.SFSafariViewController:专门用来展示网页 需求:即想要在当前应用展示网页,又想要safari功能 iOS9才能使用
+     4.WKWebView
+     1.导入#import <SafariServices/SafariServices.h>
+     */
+    XMGSquareItem *item = self.squareItems[indexPath.row];
+    if (![item.url containsString:@"http"]) return;
+    
+    NSURL *url = [NSURL URLWithString:item.url];
+    
+    // SFSafariViewController使用Modal
+    SFSafariViewController *safariVc = [[SFSafariViewController alloc] initWithURL:url];
+    //    safariVc.delegate = self;
+    //    self.navigationController.navigationBarHidden = YES;
+    //    [self.navigationController pushViewController:safariVc animated:YES];
+    [self presentViewController:safariVc animated:YES completion:nil];
+}
+#pragma mark - SFSafariViewControllerDelegate
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)setupNavBar{
     // 设置
     UIBarButtonItem *settingItem =  [UIBarButtonItem itemWithimage:[UIImage imageNamed:@"mine-setting-icon"] highImage:[UIImage imageNamed:@"mine-setting-icon-click"] target:self action:@selector(setting)];
