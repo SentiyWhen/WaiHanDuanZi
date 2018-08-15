@@ -7,6 +7,7 @@
 //
 
 #import "XMGEssenceViewController.h"
+#import "XMGTitleButton.h"
 
 // UIBarButtonItem:描述按钮具体的内容
 // UINavigationItem:设置导航条上内容(左边,右边,中间)
@@ -15,6 +16,7 @@
 @interface XMGEssenceViewController ()
 
 @property (nonatomic, weak) UIView *titlesView;
+@property (nonatomic, weak) XMGTitleButton *previousClickedTitleButton;
 
 @end
 
@@ -56,7 +58,7 @@
     CGFloat titleButtonH = self.titlesView.xmg_height;
     //创建5个标题按钮
     for (NSUInteger i = 0; i < count; i++) {
-        UIButton *titleButton  = [[UIButton alloc] init];
+        XMGTitleButton *titleButton  = [[XMGTitleButton alloc] init];
         [titleButton addTarget:self action:@selector(titlesButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.titlesView addSubview:titleButton];
         titleButton.frame = CGRectMake(titleButtonW*i, 0, titleButtonW, titleButtonH);
@@ -80,8 +82,11 @@
     XMGFunc;
 }
 
-- (void)titlesButtonClick :(UIButton *)titleButton {
+- (void)titlesButtonClick :(XMGTitleButton *)titleButton {
     XMGFunc;
+    self.previousClickedTitleButton.selected = NO;
+    titleButton.selected = YES;
+    self.previousClickedTitleButton = titleButton;
 }
 
 

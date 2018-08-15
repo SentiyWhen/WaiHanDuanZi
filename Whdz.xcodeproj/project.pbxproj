@@ -58,6 +58,7 @@
 		F8B534B12122776800686925 /* XMGWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B534AF2122776800686925 /* XMGWebViewController.xib */; };
 		F8B534B3212282ED00686925 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B534B2212282EC00686925 /* WebKit.framework */; };
 		F8B534B82122B37D00686925 /* XMGFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534B72122B37D00686925 /* XMGFileTool.m */; };
+		F8B534BD2123CCF300686925 /* XMGTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534BC2123CCF300686925 /* XMGTitleButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,8 @@
 		F8B534B2212282EC00686925 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		F8B534B62122B37D00686925 /* XMGFileTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGFileTool.h; sourceTree = "<group>"; };
 		F8B534B72122B37D00686925 /* XMGFileTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGFileTool.m; sourceTree = "<group>"; };
+		F8B534BB2123CCF300686925 /* XMGTitleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTitleButton.h; sourceTree = "<group>"; };
+		F8B534BC2123CCF300686925 /* XMGTitleButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTitleButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +262,7 @@
 		F8B5342221217DAE00686925 /* Essence(精华) */ = {
 			isa = PBXGroup;
 			children = (
+				F8B534BA2123CCD400686925 /* View */,
 				F8B5342321217DAE00686925 /* Controller */,
 			);
 			path = "Essence(精华)";
@@ -559,6 +563,15 @@
 			path = File;
 			sourceTree = "<group>";
 		};
+		F8B534BA2123CCD400686925 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8B534BB2123CCF300686925 /* XMGTitleButton.h */,
+				F8B534BC2123CCF300686925 /* XMGTitleButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -736,6 +749,7 @@
 				F8B534B82122B37D00686925 /* XMGFileTool.m in Sources */,
 				F8B5348821217DAE00686925 /* XMGSubTagViewController.m in Sources */,
 				F8B5348221217DAE00686925 /* UIImage+Image.m in Sources */,
+				F8B534BD2123CCF300686925 /* XMGTitleButton.m in Sources */,
 				F8B5348421217DAE00686925 /* UIBarButtonItem+Item.m in Sources */,
 				F8B534A821217DAE00686925 /* XMGPublishViewController.m in Sources */,
 				F8B5348321217DAE00686925 /* UITextField+Placeholder.m in Sources */,
