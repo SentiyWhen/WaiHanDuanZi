@@ -63,8 +63,6 @@
         [self.titlesView addSubview:titleButton];
         titleButton.frame = CGRectMake(titleButtonW*i, 0, titleButtonW, titleButtonH);
         [titleButton setTitle:titles[i] forState:UIControlStateNormal];
-        [titleButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-        [titleButton setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
     }
 }
 
