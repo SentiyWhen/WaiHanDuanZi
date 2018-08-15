@@ -6,6 +6,17 @@
 //  Copyright © 2018年 zww. All rights reserved.
 //
 
+/*
+ 名字叫attributes并且是NSDictionary *类型的参数，它的key一般都有以下规律
+ 1.iOS7开始
+ 1> 所有的key都来源于： NSAttributedString.h
+ 2> 格式基本都是：NS***AttributeName
+ 
+ 2.iOS7之前
+ 1> 所有的key都来源于： UIStringDrawing.h
+ 2> 格式基本都是：UITextAttribute***
+ */
+
 #import "XMGEssenceViewController.h"
 #import "XMGTitleButton.h"
 
@@ -15,7 +26,11 @@
 
 @interface XMGEssenceViewController ()
 
+/** 标题栏 */
 @property (nonatomic, weak) UIView *titlesView;
+/** 标题下划线 */
+@property (nonatomic, weak) UIView *titleUnderline;
+/** 上一次点击的标题按钮 */
 @property (nonatomic, weak) XMGTitleButton *previousClickedTitleButton;
 
 @end
@@ -48,6 +63,9 @@
     
     //标题栏按钮
     [self setupTitlesButtons];
+    
+    //标题栏下划线
+    [self setupTitleUnderline];
 }
 
 - (void)setupTitlesButtons {
@@ -75,16 +93,42 @@
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
 }
 
+- (void)setupTitleUnderline {
+    //取到标题按钮
+    
+    XMGTitleButton *firstTitleButton = self.titlesView.subviews.firstObject;
+    
+    //下划线
+    UIView *titleUnderline = [[UIView alloc] init];
+    titleUnderline.xmg_height = 2;
+    titleUnderline.xmg_y = self.titlesView.xmg_height - titleUnderline.xmg_height;
+    titleUnderline.backgroundColor = [firstTitleButton titleColorForState:UIControlStateSelected];
+    [self.titlesView addSubview:titleUnderline];
+    self.titleUnderline = titleUnderline;
+    
+    // 切换按钮状态
+    firstTitleButton.selected = YES;
+    self.previousClickedTitleButton = firstTitleButton;
+    
+    [firstTitleButton.titleLabel sizeToFit];
+    self.titleUnderline.xmg_width = firstTitleButton.titleLabel.xmg_width + 10;
+    self.titleUnderline.xmg_centerX = firstTitleButton.xmg_centerX;
+}
+
 #pragma mark - 监听
 - (void)game {
     XMGFunc;
 }
 
 - (void)titlesButtonClick :(XMGTitleButton *)titleButton {
-    XMGFunc;
     self.previousClickedTitleButton.selected = NO;
     titleButton.selected = YES;
     self.previousClickedTitleButton = titleButton;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.titleUnderline.xmg_width = titleButton.titleLabel.xmg_width + 10;
+        self.titleUnderline.xmg_centerX = titleButton.xmg_centerX;
+    }];
 }
 
 
