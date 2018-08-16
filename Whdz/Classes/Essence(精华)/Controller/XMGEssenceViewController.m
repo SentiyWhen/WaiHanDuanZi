@@ -180,6 +180,23 @@
     } completion:^(BOOL finished) {
         [self addChildVcViewIntoScrollView:index];
     }];
+    
+    // 设置index位置对应的tableView.scrollsToTop = YES， 其他都设置为NO
+    for (NSUInteger i = 0; i < self.childViewControllers.count; i++) {
+        UIViewController *childVc = self.childViewControllers[i];
+        // 如果view还没有被创建，就不用去处理
+        if (!childVc.isViewLoaded) continue;
+        
+        UIScrollView *scrollView = (UIScrollView *)childVc.view;
+        if (![scrollView isKindOfClass:[UIScrollView class]]) continue;
+        
+        //        if (i == index) { // 是标题按钮对应的子控制器
+        //            scrollView.scrollsToTop = YES;
+        //        } else {
+        //            scrollView.scrollsToTop = NO;
+        //        }
+        scrollView.scrollsToTop = (i == index);
+    }
 }
 
 #pragma mark - <UIScrollViewDelegate>
