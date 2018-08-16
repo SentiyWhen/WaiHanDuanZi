@@ -55,6 +55,8 @@
     [self setupScrollView];
     //标题栏
     [self setupTitlesView];
+    // 添加第0个子控制器的view
+    [self addChildVcViewIntoScrollView:0];
 }
 
 - (void)setupAllChildVcs {
@@ -82,14 +84,12 @@
     // 添加子控制器的view
     NSUInteger count = self.childViewControllers.count;
     CGFloat scrollerViewW = scrollView.xmg_width;
-    CGFloat scrollerViewH = scrollView.xmg_height;
-    
-    for (NSUInteger i = 0; i < count; ++i) {
-        //取出i位置子控制器的view
-        UIView *childVcView = self.childViewControllers[i].view;
-        childVcView.frame = CGRectMake(i * scrollerViewW, 0, scrollerViewW, scrollerViewH);
-        [scrollView addSubview:childVcView];
-    }
+//    for (NSUInteger i = 0; i < count; ++i) {
+//        //取出i位置子控制器的view
+//        UIView *childVcView = self.childViewControllers[i].view;
+//        childVcView.frame = CGRectMake(i * scrollerViewW, 0, scrollerViewW, scrollerViewH);
+//        [scrollView addSubview:childVcView];
+//    }
     
     scrollView.contentSize = CGSizeMake(count * scrollerViewW, 0);
     
@@ -167,6 +167,7 @@
     titleButton.selected = YES;
     self.previousClickedTitleButton = titleButton;
     
+    NSUInteger index = titleButton.tag;
     [UIView animateWithDuration:0.3 animations:^{
         self.titleUnderline.xmg_width = titleButton.titleLabel.xmg_width + 10;
         self.titleUnderline.xmg_centerX = titleButton.xmg_centerX;
@@ -174,8 +175,10 @@
 //        NSUInteger index = [self.titlesView.subviews indexOfObject:titleButton];
 //        CGFloat offsetX = self.scrollView.xmg_width * index;
         //滚动scrollview
-        CGFloat offsetX = self.scrollView.xmg_width * titleButton.tag;
+        CGFloat offsetX = self.scrollView.xmg_width * index;
         self.scrollView.contentOffset = CGPointMake(offsetX, self.scrollView.contentOffset.y);
+    } completion:^(BOOL finished) {
+        [self addChildVcViewIntoScrollView:index];
     }];
 }
 
@@ -184,20 +187,104 @@
  *  当用户松开scrollView并且滑动结束时调用这个代理方法（scrollView停止滚动的时候）
  */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    XMGFunc;
     //求出标题按钮的索引
     NSUInteger index = scrollView.contentOffset.x / scrollView.xmg_width;
     
     //点击对应的标题按钮
     XMGTitleButton * titleButton = self.titlesView.subviews[index];
+//    XMGTitleButton *titleButton = [self.titlesView viewWithTag:index];
     [self titlesButtonClick:titleButton];
 }
+
+#pragma mark - 其他
+/**
+ *  添加第index个子控制器的view到scrollView中
+ */
+- (void)addChildVcViewIntoScrollView:(NSUInteger)index
+{
+    //取出按钮索引对应的控制器
+    UIViewController *childVc = self.childViewControllers[index];
+    
+    // 如果view已经被加载过，就直接返回
+    if (childVc.isViewLoaded) return;
+    
+    // 取出index位置对应的子控制器view
+    UIView *childVcView = childVc.view;
+    //    if (childVcView.superview) return;
+    //    if (childVcView.window) return;
+    
+    // 设置子控制器view的frame
+    CGFloat scrollViewW = self.scrollView.xmg_width;
+    CGFloat scrollViewH = self.scrollView.xmg_height;
+    childVcView.frame = CGRectMake(index * scrollViewW, 0, scrollViewW, scrollViewH);
+//    childVcView.frame = self.scrollView.bounds;
+    // 添加子控制器的view到scrollView中
+    [self.scrollView addSubview:childVcView];
+}
+
+
 /**
  *  当用户松开scrollView时调用这个代理方法（结束拖拽的时候）
  */
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    XMGFunc;
-}
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+//{
+//    XMGFunc
+//}
+
+/*
+ -[UIView setSelected:]: unrecognized selector sent to instance 0x7fbcba35ab10
+ 
+ -[XMGPerson length]: unrecognized selector sent to instance 0x7fbcba35ab10
+ 将XMGPerson当做NSString来使用
+ 
+ - (void)test:(NSString *)string
+ {
+ string.length;
+ }
+ id str = [[XMGPerson alloc] init];
+ [self test:str];
+ 
+ -[XMGPerson count]: unrecognized selector sent to instance 0x7fbcba35ab10
+ 将XMGPerson当做NSArray或者NSDictionary来使用
+ 
+ -[XMGPerson setObject:forKeyedSubscript:]: unrecognized selector sent to instance 0x7fbcba35ab10
+ 名字中带有Subscript的方法，一般都是集合的方法，比如NSMutableDictionary\NSMutableArray的方法
+ 将XMGPersonNSMutableDictionary来使用
+ */
+
+/*
+ A
+ -D1  0
+ -E1 10
+ -E2 0
+ -D2 10
+ -F1 0
+ -F2 0
+ -D3 0
+ 
+ [A viewWithTag:10]; // 返回E1
+ */
+
+/*
+ @implementation UIView
+ 
+ - (UIView *)viewWithTag:(NSInteger)tag
+ {
+ // 如果自己的tag符合要求，就返回自己
+ if (self.tag == tag) return self;
+ 
+ // 遍历子控件（也包括子控件的子控件...），直到找到符合条件的子控件为止
+ for (UIView *subview in self.subviews) {
+ //        if (subview.tag == tag) return subview;
+ UIView *resultView = [subview viewWithTag:tag];
+ if (resultView) return resultView;
+ }
+ 
+ return nil;
+ }
+ 
+ @end
+ */
 
 
 @end
