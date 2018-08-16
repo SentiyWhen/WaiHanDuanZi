@@ -163,6 +163,12 @@
 }
 
 - (void)titlesButtonClick :(XMGTitleButton *)titleButton {
+    // 重复点击了标题按钮
+    if (self.previousClickedTitleButton == titleButton) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:XMGTitleButtonDidRepeatClickNotification object:nil];
+    }
+    
+    // 切换按钮状态
     self.previousClickedTitleButton.selected = NO;
     titleButton.selected = YES;
     self.previousClickedTitleButton = titleButton;

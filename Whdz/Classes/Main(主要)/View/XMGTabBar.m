@@ -75,7 +75,7 @@
     if (self.previousClickedTabBarButton == tabBarButton) {
         XMGFunc;
         // 发出通知，告知外界tabBarButton被重复点击了
-//        [[NSNotificationCenter defaultCenter] postNotificationName:XMGTabBarButtonDidRepeatClickNotification object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:XMGTabBarButtonDidRepeatClickNotification object:nil];
     }
     
     self.previousClickedTabBarButton = tabBarButton;
