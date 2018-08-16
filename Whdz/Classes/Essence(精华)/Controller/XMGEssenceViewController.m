@@ -32,6 +32,8 @@
 
 @interface XMGEssenceViewController ()
 
+/** 用来存放所有子控制器view的scrollView */
+@property (nonatomic, weak) UIScrollView *scrollView;
 /** 标题栏 */
 @property (nonatomic, weak) UIView *titlesView;
 /** 标题下划线 */
@@ -74,7 +76,9 @@
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.pagingEnabled = YES;
     [self.view addSubview:scrollView];
+    self.scrollView = scrollView;
     
+    // 添加子控制器的view
     NSUInteger count = self.childViewControllers.count;
     CGFloat scrollerViewW = scrollView.xmg_width;
     CGFloat scrollerViewH = scrollView.xmg_height;
@@ -113,6 +117,7 @@
     //创建5个标题按钮
     for (NSUInteger i = 0; i < count; i++) {
         XMGTitleButton *titleButton  = [[XMGTitleButton alloc] init];
+        titleButton.tag = i;
         [titleButton addTarget:self action:@selector(titlesButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.titlesView addSubview:titleButton];
         titleButton.frame = CGRectMake(titleButtonW*i, 0, titleButtonW, titleButtonH);
@@ -164,6 +169,12 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.titleUnderline.xmg_width = titleButton.titleLabel.xmg_width + 10;
         self.titleUnderline.xmg_centerX = titleButton.xmg_centerX;
+        
+//        NSUInteger index = [self.titlesView.subviews indexOfObject:titleButton];
+//        CGFloat offsetX = self.scrollView.xmg_width * index;
+        //滚动scrollview
+        CGFloat offsetX = self.scrollView.xmg_width * titleButton.tag;
+        self.scrollView.contentOffset = CGPointMake(offsetX, self.scrollView.contentOffset.y);
     }];
 }
 
