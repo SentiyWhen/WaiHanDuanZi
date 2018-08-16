@@ -495,8 +495,8 @@
 		F8B5346E21217DAE00686925 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F8B5346F21217DAE00686925 /* XMGTabBar.m */,
 				F8B5347021217DAE00686925 /* XMGTabBar.h */,
+				F8B5346F21217DAE00686925 /* XMGTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
