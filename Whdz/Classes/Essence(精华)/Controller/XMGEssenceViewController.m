@@ -30,7 +30,7 @@
 // UINavigationItem:设置导航条上内容(左边,右边,中间)
 // tabBarItem: 设置tabBar上按钮内容(tabBarButton)
 
-@interface XMGEssenceViewController ()
+@interface XMGEssenceViewController ()<UIScrollViewDelegate>
 
 /** 用来存放所有子控制器view的scrollView */
 @property (nonatomic, weak) UIScrollView *scrollView;
@@ -75,6 +75,7 @@
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.pagingEnabled = YES;
+    scrollView.delegate = self;
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;
     
@@ -178,6 +179,25 @@
     }];
 }
 
+#pragma mark - <UIScrollViewDelegate>
+/**
+ *  当用户松开scrollView并且滑动结束时调用这个代理方法（scrollView停止滚动的时候）
+ */
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    XMGFunc;
+    //求出标题按钮的索引
+    NSUInteger index = scrollView.contentOffset.x / scrollView.xmg_width;
+    
+    //点击对应的标题按钮
+    XMGTitleButton * titleButton = self.titlesView.subviews[index];
+    [self titlesButtonClick:titleButton];
+}
+/**
+ *  当用户松开scrollView时调用这个代理方法（结束拖拽的时候）
+ */
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    XMGFunc;
+}
 
 
 @end
