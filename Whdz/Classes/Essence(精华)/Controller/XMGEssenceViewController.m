@@ -20,6 +20,12 @@
 #import "XMGEssenceViewController.h"
 #import "XMGTitleButton.h"
 
+#import "XMGAllViewController.h"
+#import "XMGVideoViewController.h"
+#import "XMGVoiceViewController.h"
+#import "XMGPictureViewController.h"
+#import "XMGWordViewController.h"
+
 // UIBarButtonItem:描述按钮具体的内容
 // UINavigationItem:设置导航条上内容(左边,右边,中间)
 // tabBarItem: 设置tabBar上按钮内容(tabBarButton)
@@ -39,6 +45,8 @@
 #pragma mark - 初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //初始化子控制器
+    [self setupAllChildVcs];
     //导航栏
     [self setupNavBar];
     //scrollview
@@ -47,11 +55,39 @@
     [self setupTitlesView];
 }
 
+- (void)setupAllChildVcs {
+    [self addChildViewController:[[XMGAllViewController alloc] init]];
+    [self addChildViewController:[[XMGVideoViewController alloc] init]];
+    [self addChildViewController:[[XMGVoiceViewController alloc] init]];
+    [self addChildViewController:[[XMGPictureViewController alloc] init]];
+    [self addChildViewController:[[XMGWordViewController alloc] init]];
+}
+
 - (void)setupScrollView {
+    // 不允许自动修改UIScrollView的内边距
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.backgroundColor = [UIColor blueColor];
     scrollView.frame = self.view.bounds;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.pagingEnabled = YES;
     [self.view addSubview:scrollView];
+    
+    NSUInteger count = self.childViewControllers.count;
+    CGFloat scrollerViewW = scrollView.xmg_width;
+    CGFloat scrollerViewH = scrollView.xmg_height;
+    
+    for (NSUInteger i = 0; i < count; ++i) {
+        //取出i位置子控制器的view
+        UIView *childVcView = self.childViewControllers[i].view;
+        childVcView.frame = CGRectMake(i * scrollerViewW, 0, scrollerViewW, scrollerViewH);
+        [scrollView addSubview:childVcView];
+    }
+    
+    scrollView.contentSize = CGSizeMake(count * scrollerViewW, 0);
+    
 }
 
 - (void)setupTitlesView {

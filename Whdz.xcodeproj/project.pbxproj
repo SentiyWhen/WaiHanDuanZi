@@ -59,6 +59,12 @@
 		F8B534B3212282ED00686925 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B534B2212282EC00686925 /* WebKit.framework */; };
 		F8B534B82122B37D00686925 /* XMGFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534B72122B37D00686925 /* XMGFileTool.m */; };
 		F8B534BD2123CCF300686925 /* XMGTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534BC2123CCF300686925 /* XMGTitleButton.m */; };
+		F8B534C02124140200686925 /* XMGAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534BF2124140200686925 /* XMGAllViewController.m */; };
+		F8B534C32124141D00686925 /* XMGVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534C22124141D00686925 /* XMGVideoViewController.m */; };
+		F8B534C62124142B00686925 /* XMGVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534C52124142B00686925 /* XMGVoiceViewController.m */; };
+		F8B534C92124144700686925 /* XMGPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534C82124144700686925 /* XMGPictureViewController.m */; };
+		F8B534CC2124145900686925 /* XMGWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534CB2124145900686925 /* XMGWordViewController.m */; };
+		F8B534CF21250BD500686925 /* XMGConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534CE21250BD500686925 /* XMGConst.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +166,18 @@
 		F8B534B72122B37D00686925 /* XMGFileTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGFileTool.m; sourceTree = "<group>"; };
 		F8B534BB2123CCF300686925 /* XMGTitleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTitleButton.h; sourceTree = "<group>"; };
 		F8B534BC2123CCF300686925 /* XMGTitleButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTitleButton.m; sourceTree = "<group>"; };
+		F8B534BE2124140200686925 /* XMGAllViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGAllViewController.h; sourceTree = "<group>"; };
+		F8B534BF2124140200686925 /* XMGAllViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGAllViewController.m; sourceTree = "<group>"; };
+		F8B534C12124141D00686925 /* XMGVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGVideoViewController.h; sourceTree = "<group>"; };
+		F8B534C22124141D00686925 /* XMGVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGVideoViewController.m; sourceTree = "<group>"; };
+		F8B534C42124142B00686925 /* XMGVoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGVoiceViewController.h; sourceTree = "<group>"; };
+		F8B534C52124142B00686925 /* XMGVoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGVoiceViewController.m; sourceTree = "<group>"; };
+		F8B534C72124144700686925 /* XMGPictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGPictureViewController.h; sourceTree = "<group>"; };
+		F8B534C82124144700686925 /* XMGPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGPictureViewController.m; sourceTree = "<group>"; };
+		F8B534CA2124145900686925 /* XMGWordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGWordViewController.h; sourceTree = "<group>"; };
+		F8B534CB2124145900686925 /* XMGWordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGWordViewController.m; sourceTree = "<group>"; };
+		F8B534CD21250BD500686925 /* XMGConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGConst.h; sourceTree = "<group>"; };
+		F8B534CE21250BD500686925 /* XMGConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGConst.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +291,16 @@
 			children = (
 				F8B5342421217DAE00686925 /* XMGEssenceViewController.h */,
 				F8B5342521217DAE00686925 /* XMGEssenceViewController.m */,
+				F8B534BE2124140200686925 /* XMGAllViewController.h */,
+				F8B534BF2124140200686925 /* XMGAllViewController.m */,
+				F8B534C12124141D00686925 /* XMGVideoViewController.h */,
+				F8B534C22124141D00686925 /* XMGVideoViewController.m */,
+				F8B534C42124142B00686925 /* XMGVoiceViewController.h */,
+				F8B534C52124142B00686925 /* XMGVoiceViewController.m */,
+				F8B534C72124144700686925 /* XMGPictureViewController.h */,
+				F8B534C82124144700686925 /* XMGPictureViewController.m */,
+				F8B534CA2124145900686925 /* XMGWordViewController.h */,
+				F8B534CB2124145900686925 /* XMGWordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -282,6 +310,8 @@
 			children = (
 				F8B5342821217DAE00686925 /* Category */,
 				F8B5343121217DAE00686925 /* main.m */,
+				F8B534CD21250BD500686925 /* XMGConst.h */,
+				F8B534CE21250BD500686925 /* XMGConst.m */,
 				F8B5343221217DAE00686925 /* Whdz.pch */,
 				F8B5342721217DAE00686925 /* AppDelegate.h */,
 				F8B5343321217DAE00686925 /* AppDelegate.m */,
@@ -742,11 +772,14 @@
 			files = (
 				F8B534A221217DAE00686925 /* XMGTabBarController.m in Sources */,
 				F8B5349121217DAE00686925 /* XMGFastButton.m in Sources */,
+				F8B534C62124142B00686925 /* XMGVoiceViewController.m in Sources */,
+				F8B534CC2124145900686925 /* XMGWordViewController.m in Sources */,
 				F8B5349221217DAE00686925 /* XMGFastLoginView.m in Sources */,
 				F8B5348C21217DAE00686925 /* XMGLoginRegisterViewController.m in Sources */,
 				F8B5349321217DAE00686925 /* XMGLoginField.m in Sources */,
 				F8B5349421217DAE00686925 /* XMGLoginRegisterView.m in Sources */,
 				F8B534B82122B37D00686925 /* XMGFileTool.m in Sources */,
+				F8B534C92124144700686925 /* XMGPictureViewController.m in Sources */,
 				F8B5348821217DAE00686925 /* XMGSubTagViewController.m in Sources */,
 				F8B5348221217DAE00686925 /* UIImage+Image.m in Sources */,
 				F8B534BD2123CCF300686925 /* XMGTitleButton.m in Sources */,
@@ -757,12 +790,15 @@
 				F8B5349D21217DAE00686925 /* XMGSettingViewController.m in Sources */,
 				F8B5348921217DAE00686925 /* XMGSubTagItem.m in Sources */,
 				F8B5348521217DAE00686925 /* main.m in Sources */,
+				F8B534C02124140200686925 /* XMGAllViewController.m in Sources */,
 				F8B5348021217DAE00686925 /* XMGEssenceViewController.m in Sources */,
 				F8B5348721217DAE00686925 /* XMGNewViewController.m in Sources */,
 				F8B534A121217DAE00686925 /* XMGNavigationViewController.m in Sources */,
+				F8B534C32124141D00686925 /* XMGVideoViewController.m in Sources */,
 				F8B534B02122776800686925 /* XMGWebViewController.m in Sources */,
 				F8B5348A21217DAE00686925 /* XMGSubTagCell.m in Sources */,
 				F8B5348D21217DAE00686925 /* XMGFriendTrendViewController.m in Sources */,
+				F8B534CF21250BD500686925 /* XMGConst.m in Sources */,
 				F8B5349F21217DAE00686925 /* XMGAdViewController.m in Sources */,
 				F8B534A021217DAE00686925 /* XMGADItem.m in Sources */,
 				F8B534A721217DAE00686925 /* XMGSquareCell.m in Sources */,
