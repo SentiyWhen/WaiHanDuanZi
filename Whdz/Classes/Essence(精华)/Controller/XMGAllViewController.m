@@ -17,8 +17,9 @@
 
 
 @interface XMGAllViewController ()
-/** 数据量 */
-@property (nonatomic, assign) NSInteger dataCount;
+
+/** 当前最后一条帖子数据的描述信息，专门用来加载下一页数据 */
+@property (nonatomic, copy) NSString *maxtime;
 
 /** 所有的帖子数据 */
 @property (nonatomic, strong) NSMutableArray *topics;
@@ -144,6 +145,8 @@
     params[@"type"] = @1;
     //3.发送请求
     [mgr GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //存储maxtime
+        self.maxtime = responseObject[@"info"][@"maxtime"];
         //字典数组->模型数组
         self.topics = [XMGTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         //刷新表格
@@ -164,20 +167,7 @@
      3.controller里添加数组属性存储数据
      4.使用MJExtension字典转模型
      5.tableview数据源方法中 取出model并设置cell数据
-     
      */
-    
-    
-//    XMGLog(@"发送请求给服务器，下拉刷新数据");
-//
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        // 服务器的数据回来了
-//        self.dataCount = 20;
-//        [self.tableView reloadData];
-//
-//        // 结束刷新
-//        [self headerEndRefreshing];
-//    });
 }
 
 /**
@@ -186,15 +176,28 @@
 - (void)loadMoreTopics
 {
     XMGLog(@"发送请求给服务器 - 加载更多数据");
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 服务器请求回来了
-        self.dataCount += 5;
-        [self.tableView reloadData];
+    //1.创建请求会话管理者
+    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    //2.拼接参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @1;
+    params[@"maxtime"] = self.maxtime;
+    //3.发送请求
+    [mgr GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        // 存储maxtime
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        //字典数组 ---> 模型数据
+        NSArray *moreTopics = [XMGTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        //累加到旧数组的后面
+        [self.topics addObjectsFromArray:moreTopics];
         
-        // 结束刷新
+        [self.tableView reloadData];
         [self footerEndRefreshing];
-    });
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
 }
 
 #pragma mark - 数据源
