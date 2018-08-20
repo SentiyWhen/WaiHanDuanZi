@@ -65,6 +65,8 @@
 		F8B534C92124144700686925 /* XMGPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534C82124144700686925 /* XMGPictureViewController.m */; };
 		F8B534CC2124145900686925 /* XMGWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534CB2124145900686925 /* XMGWordViewController.m */; };
 		F8B534CF21250BD500686925 /* XMGConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534CE21250BD500686925 /* XMGConst.m */; };
+		F8E801662126A7B5000702F2 /* XMGTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E801652126A7B5000702F2 /* XMGTopic.m */; };
+		F8E801692126B4F7000702F2 /* XMGTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E801682126B4F7000702F2 /* XMGTopicCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +180,10 @@
 		F8B534CB2124145900686925 /* XMGWordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGWordViewController.m; sourceTree = "<group>"; };
 		F8B534CD21250BD500686925 /* XMGConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGConst.h; sourceTree = "<group>"; };
 		F8B534CE21250BD500686925 /* XMGConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGConst.m; sourceTree = "<group>"; };
+		F8E801642126A7B5000702F2 /* XMGTopic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTopic.h; sourceTree = "<group>"; };
+		F8E801652126A7B5000702F2 /* XMGTopic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopic.m; sourceTree = "<group>"; };
+		F8E801672126B4F7000702F2 /* XMGTopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTopicCell.h; sourceTree = "<group>"; };
+		F8E801682126B4F7000702F2 /* XMGTopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopicCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +286,7 @@
 		F8B5342221217DAE00686925 /* Essence(精华) */ = {
 			isa = PBXGroup;
 			children = (
+				F8E801632126A78F000702F2 /* Model */,
 				F8B534BA2123CCD400686925 /* View */,
 				F8B5342321217DAE00686925 /* Controller */,
 			);
@@ -598,8 +605,19 @@
 			children = (
 				F8B534BB2123CCF300686925 /* XMGTitleButton.h */,
 				F8B534BC2123CCF300686925 /* XMGTitleButton.m */,
+				F8E801672126B4F7000702F2 /* XMGTopicCell.h */,
+				F8E801682126B4F7000702F2 /* XMGTopicCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F8E801632126A78F000702F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8E801642126A7B5000702F2 /* XMGTopic.h */,
+				F8E801652126A7B5000702F2 /* XMGTopic.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -774,9 +792,11 @@
 				F8B5349121217DAE00686925 /* XMGFastButton.m in Sources */,
 				F8B534C62124142B00686925 /* XMGVoiceViewController.m in Sources */,
 				F8B534CC2124145900686925 /* XMGWordViewController.m in Sources */,
+				F8E801692126B4F7000702F2 /* XMGTopicCell.m in Sources */,
 				F8B5349221217DAE00686925 /* XMGFastLoginView.m in Sources */,
 				F8B5348C21217DAE00686925 /* XMGLoginRegisterViewController.m in Sources */,
 				F8B5349321217DAE00686925 /* XMGLoginField.m in Sources */,
+				F8E801662126A7B5000702F2 /* XMGTopic.m in Sources */,
 				F8B5349421217DAE00686925 /* XMGLoginRegisterView.m in Sources */,
 				F8B534B82122B37D00686925 /* XMGFileTool.m in Sources */,
 				F8B534C92124144700686925 /* XMGPictureViewController.m in Sources */,
