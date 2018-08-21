@@ -165,7 +165,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @29;
+    params[@"type"] = @41;
     //3.发送请求
     [self.manager GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         //存储maxtime
@@ -202,7 +202,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @29;
+    params[@"type"] = @41;
     params[@"maxtime"] = self.maxtime;
     //3.发送请求
     [self.manager GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
