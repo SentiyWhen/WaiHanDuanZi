@@ -69,10 +69,8 @@
 		F8E801692126B4F7000702F2 /* XMGTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E801682126B4F7000702F2 /* XMGTopicCell.m */; };
 		F8E80177212BB358000702F2 /* XMGTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80176212BB358000702F2 /* XMGTopicCell.xib */; };
 		F8E8017A212C2862000702F2 /* XMGTopicVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E80179212C2862000702F2 /* XMGTopicVideoView.m */; };
-		F8E8017D212C287A000702F2 /* XMGTopicVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8017C212C287A000702F2 /* XMGTopicVoiceView.m */; };
 		F8E80180212C288A000702F2 /* XMGTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8017F212C288A000702F2 /* XMGTopicPictureView.m */; };
 		F8E80182212C28E9000702F2 /* XMGTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80181212C28E9000702F2 /* XMGTopicVideoView.xib */; };
-		F8E80184212C28F6000702F2 /* XMGTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80183212C28F6000702F2 /* XMGTopicVoiceView.xib */; };
 		F8E80186212C2902000702F2 /* XMGTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80185212C2902000702F2 /* XMGTopicPictureView.xib */; };
 /* End PBXBuildFile section */
 
@@ -194,12 +192,9 @@
 		F8E80176212BB358000702F2 /* XMGTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMGTopicCell.xib; sourceTree = "<group>"; };
 		F8E80178212C2862000702F2 /* XMGTopicVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTopicVideoView.h; sourceTree = "<group>"; };
 		F8E80179212C2862000702F2 /* XMGTopicVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopicVideoView.m; sourceTree = "<group>"; };
-		F8E8017B212C287A000702F2 /* XMGTopicVoiceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTopicVoiceView.h; sourceTree = "<group>"; };
-		F8E8017C212C287A000702F2 /* XMGTopicVoiceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopicVoiceView.m; sourceTree = "<group>"; };
 		F8E8017E212C2889000702F2 /* XMGTopicPictureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTopicPictureView.h; sourceTree = "<group>"; };
 		F8E8017F212C288A000702F2 /* XMGTopicPictureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopicPictureView.m; sourceTree = "<group>"; };
 		F8E80181212C28E9000702F2 /* XMGTopicVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGTopicVideoView.xib; sourceTree = "<group>"; };
-		F8E80183212C28F6000702F2 /* XMGTopicVoiceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGTopicVoiceView.xib; sourceTree = "<group>"; };
 		F8E80185212C2902000702F2 /* XMGTopicPictureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGTopicPictureView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -628,9 +623,6 @@
 				F8E80178212C2862000702F2 /* XMGTopicVideoView.h */,
 				F8E80179212C2862000702F2 /* XMGTopicVideoView.m */,
 				F8E80181212C28E9000702F2 /* XMGTopicVideoView.xib */,
-				F8E8017B212C287A000702F2 /* XMGTopicVoiceView.h */,
-				F8E8017C212C287A000702F2 /* XMGTopicVoiceView.m */,
-				F8E80183212C28F6000702F2 /* XMGTopicVoiceView.xib */,
 				F8E8017E212C2889000702F2 /* XMGTopicPictureView.h */,
 				F8E8017F212C288A000702F2 /* XMGTopicPictureView.m */,
 				F8E80185212C2902000702F2 /* XMGTopicPictureView.xib */,
@@ -748,7 +740,6 @@
 				F8B5349E21217DAE00686925 /* XMGAdViewController.xib in Resources */,
 				F8B5349521217DAE00686925 /* XMGFastLoginView.xib in Resources */,
 				F8B5348F21217DAE00686925 /* XMGLoginRegisterViewController.xib in Resources */,
-				F8E80184212C28F6000702F2 /* XMGTopicVoiceView.xib in Resources */,
 				F8B5340721217A3100686925 /* Assets.xcassets in Resources */,
 				F8B5349C21217DAE00686925 /* LaunchImage.png in Resources */,
 				F8B5340521217A3000686925 /* Main.storyboard in Resources */,
@@ -821,7 +812,6 @@
 			files = (
 				F8B534A221217DAE00686925 /* XMGTabBarController.m in Sources */,
 				F8B5349121217DAE00686925 /* XMGFastButton.m in Sources */,
-				F8E8017D212C287A000702F2 /* XMGTopicVoiceView.m in Sources */,
 				F8B534C62124142B00686925 /* XMGVoiceViewController.m in Sources */,
 				F8B534CC2124145900686925 /* XMGWordViewController.m in Sources */,
 				F8E801692126B4F7000702F2 /* XMGTopicCell.m in Sources */,

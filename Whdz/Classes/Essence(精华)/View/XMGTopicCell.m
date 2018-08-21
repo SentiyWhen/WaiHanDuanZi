@@ -11,7 +11,6 @@
 #import <UIImageView+WebCache.h>
 #import "XMGTopicPictureView.h"
 #import "XMGTopicVideoView.h"
-#import "XMGTopicVoiceView.h"
 
 @interface XMGTopicCell()
 // 控件的命名 -> 功能 + 控件类型
@@ -29,8 +28,6 @@
 /* 中间控件 */
 /** 图片控件 */
 @property (nonatomic, weak) XMGTopicPictureView *pictureView;
-/** 声音控件 */
-@property (nonatomic, weak) XMGTopicVoiceView *voiceView;
 /** 视频控件 */
 @property (nonatomic, weak) XMGTopicVideoView *videoView;
 
@@ -46,16 +43,6 @@
         _pictureView = pictureView;
     }
     return _pictureView;
-}
-
-- (XMGTopicVoiceView *)voiceView
-{
-    if (!_voiceView) {
-        XMGTopicVoiceView *voiceView = [XMGTopicVoiceView xmg_viewFromXib];
-        [self.contentView addSubview:voiceView];
-        _voiceView = voiceView;
-    }
-    return _voiceView;
 }
 
 - (XMGTopicVideoView *)videoView
@@ -112,19 +99,15 @@
     // 中间的内容
     if (topic.type == XMGTopicTypePicture) { // 图片
         self.pictureView.hidden = NO;
-        self.voiceView.hidden = YES;
         self.videoView.hidden = YES;
     } else if (topic.type == XMGTopicTypeVoice) { // 声音
         self.pictureView.hidden = YES;
-        self.voiceView.hidden = NO;
         self.videoView.hidden = YES;
     } else if (topic.type == XMGTopicTypeVideo) { // 视频
         self.pictureView.hidden = YES;
-        self.voiceView.hidden = YES;
         self.videoView.hidden = NO;
     } else if (topic.type == XMGTopicTypeWord) { // 段子
         self.pictureView.hidden = YES;
-        self.voiceView.hidden = YES;
         self.videoView.hidden = YES;
     }
     

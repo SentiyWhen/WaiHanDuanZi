@@ -12,8 +12,9 @@
 
 - (void)awakeFromNib
 {
-    self.autoresizingMask = UIViewAutoresizingNone;
     [super awakeFromNib];
+    self.autoresizingMask = UIViewAutoresizingNone;
+   
 }
 
 @end
