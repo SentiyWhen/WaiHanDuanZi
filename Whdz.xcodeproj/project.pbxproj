@@ -68,6 +68,12 @@
 		F8E801662126A7B5000702F2 /* XMGTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E801652126A7B5000702F2 /* XMGTopic.m */; };
 		F8E801692126B4F7000702F2 /* XMGTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E801682126B4F7000702F2 /* XMGTopicCell.m */; };
 		F8E80177212BB358000702F2 /* XMGTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80176212BB358000702F2 /* XMGTopicCell.xib */; };
+		F8E8017A212C2862000702F2 /* XMGTopicVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E80179212C2862000702F2 /* XMGTopicVideoView.m */; };
+		F8E8017D212C287A000702F2 /* XMGTopicVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8017C212C287A000702F2 /* XMGTopicVoiceView.m */; };
+		F8E80180212C288A000702F2 /* XMGTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8017F212C288A000702F2 /* XMGTopicPictureView.m */; };
+		F8E80182212C28E9000702F2 /* XMGTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80181212C28E9000702F2 /* XMGTopicVideoView.xib */; };
+		F8E80184212C28F6000702F2 /* XMGTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80183212C28F6000702F2 /* XMGTopicVoiceView.xib */; };
+		F8E80186212C2902000702F2 /* XMGTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80185212C2902000702F2 /* XMGTopicPictureView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +192,15 @@
 		F8E801672126B4F7000702F2 /* XMGTopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTopicCell.h; sourceTree = "<group>"; };
 		F8E801682126B4F7000702F2 /* XMGTopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopicCell.m; sourceTree = "<group>"; };
 		F8E80176212BB358000702F2 /* XMGTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMGTopicCell.xib; sourceTree = "<group>"; };
+		F8E80178212C2862000702F2 /* XMGTopicVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTopicVideoView.h; sourceTree = "<group>"; };
+		F8E80179212C2862000702F2 /* XMGTopicVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopicVideoView.m; sourceTree = "<group>"; };
+		F8E8017B212C287A000702F2 /* XMGTopicVoiceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTopicVoiceView.h; sourceTree = "<group>"; };
+		F8E8017C212C287A000702F2 /* XMGTopicVoiceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopicVoiceView.m; sourceTree = "<group>"; };
+		F8E8017E212C2889000702F2 /* XMGTopicPictureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTopicPictureView.h; sourceTree = "<group>"; };
+		F8E8017F212C288A000702F2 /* XMGTopicPictureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopicPictureView.m; sourceTree = "<group>"; };
+		F8E80181212C28E9000702F2 /* XMGTopicVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGTopicVideoView.xib; sourceTree = "<group>"; };
+		F8E80183212C28F6000702F2 /* XMGTopicVoiceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGTopicVoiceView.xib; sourceTree = "<group>"; };
+		F8E80185212C2902000702F2 /* XMGTopicPictureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGTopicPictureView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,8 +352,8 @@
 				F8B5342C21217DAE00686925 /* UITextField+Placeholder.m */,
 				F8B5342B21217DAE00686925 /* UIBarButtonItem+Item.h */,
 				F8B5342D21217DAE00686925 /* UIBarButtonItem+Item.m */,
-				F8B5342921217DAE00686925 /* UIView+Frame.m */,
 				F8B5342F21217DAE00686925 /* UIView+Frame.h */,
+				F8B5342921217DAE00686925 /* UIView+Frame.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -610,6 +625,15 @@
 				F8E801672126B4F7000702F2 /* XMGTopicCell.h */,
 				F8E801682126B4F7000702F2 /* XMGTopicCell.m */,
 				F8E80176212BB358000702F2 /* XMGTopicCell.xib */,
+				F8E80178212C2862000702F2 /* XMGTopicVideoView.h */,
+				F8E80179212C2862000702F2 /* XMGTopicVideoView.m */,
+				F8E80181212C28E9000702F2 /* XMGTopicVideoView.xib */,
+				F8E8017B212C287A000702F2 /* XMGTopicVoiceView.h */,
+				F8E8017C212C287A000702F2 /* XMGTopicVoiceView.m */,
+				F8E80183212C28F6000702F2 /* XMGTopicVoiceView.xib */,
+				F8E8017E212C2889000702F2 /* XMGTopicPictureView.h */,
+				F8E8017F212C288A000702F2 /* XMGTopicPictureView.m */,
+				F8E80185212C2902000702F2 /* XMGTopicPictureView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -711,6 +735,8 @@
 				F8B5349B21217DAE00686925 /* LaunchImage-700-568h@2x.png in Resources */,
 				F8B5348B21217DAE00686925 /* XMGSubTagCell.xib in Resources */,
 				F8B5349621217DAE00686925 /* LaunchImage@2x.png in Resources */,
+				F8E80182212C28E9000702F2 /* XMGTopicVideoView.xib in Resources */,
+				F8E80186212C2902000702F2 /* XMGTopicPictureView.xib in Resources */,
 				F8B5349721217DAE00686925 /* LaunchImage-568h@2x.png in Resources */,
 				F8B5340A21217A3100686925 /* LaunchScreen.storyboard in Resources */,
 				F8B534A621217DAE00686925 /* XMGSquareCell.xib in Resources */,
@@ -722,6 +748,7 @@
 				F8B5349E21217DAE00686925 /* XMGAdViewController.xib in Resources */,
 				F8B5349521217DAE00686925 /* XMGFastLoginView.xib in Resources */,
 				F8B5348F21217DAE00686925 /* XMGLoginRegisterViewController.xib in Resources */,
+				F8E80184212C28F6000702F2 /* XMGTopicVoiceView.xib in Resources */,
 				F8B5340721217A3100686925 /* Assets.xcassets in Resources */,
 				F8B5349C21217DAE00686925 /* LaunchImage.png in Resources */,
 				F8B5340521217A3000686925 /* Main.storyboard in Resources */,
@@ -794,6 +821,7 @@
 			files = (
 				F8B534A221217DAE00686925 /* XMGTabBarController.m in Sources */,
 				F8B5349121217DAE00686925 /* XMGFastButton.m in Sources */,
+				F8E8017D212C287A000702F2 /* XMGTopicVoiceView.m in Sources */,
 				F8B534C62124142B00686925 /* XMGVoiceViewController.m in Sources */,
 				F8B534CC2124145900686925 /* XMGWordViewController.m in Sources */,
 				F8E801692126B4F7000702F2 /* XMGTopicCell.m in Sources */,
@@ -809,6 +837,7 @@
 				F8B534BD2123CCF300686925 /* XMGTitleButton.m in Sources */,
 				F8B5348421217DAE00686925 /* UIBarButtonItem+Item.m in Sources */,
 				F8B534A821217DAE00686925 /* XMGPublishViewController.m in Sources */,
+				F8E8017A212C2862000702F2 /* XMGTopicVideoView.m in Sources */,
 				F8B5348321217DAE00686925 /* UITextField+Placeholder.m in Sources */,
 				F8B5348121217DAE00686925 /* UIView+Frame.m in Sources */,
 				F8B5349D21217DAE00686925 /* XMGSettingViewController.m in Sources */,
@@ -819,6 +848,7 @@
 				F8B5348721217DAE00686925 /* XMGNewViewController.m in Sources */,
 				F8B534A121217DAE00686925 /* XMGNavigationViewController.m in Sources */,
 				F8B534C32124141D00686925 /* XMGVideoViewController.m in Sources */,
+				F8E80180212C288A000702F2 /* XMGTopicPictureView.m in Sources */,
 				F8B534B02122776800686925 /* XMGWebViewController.m in Sources */,
 				F8B5348A21217DAE00686925 /* XMGSubTagCell.m in Sources */,
 				F8B5348D21217DAE00686925 /* XMGFriendTrendViewController.m in Sources */,

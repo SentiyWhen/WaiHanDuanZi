@@ -165,9 +165,11 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @41;
+    params[@"type"] = @"1";
     //3.发送请求
     [self.manager GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        XMGAFNWriteToPlist(new_topics1)
+        XMGLog(@"%@",responseObject);
         //存储maxtime
         self.maxtime = responseObject[@"info"][@"maxtime"];
         //字典数组->模型数组
@@ -177,6 +179,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
         //结束刷新
         [self headerEndRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        XMGLog(@"%@",error);
         [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
         //结束刷新
         [self headerEndRefreshing];
@@ -202,7 +205,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @41;
+    params[@"type"] = @"31";
     params[@"maxtime"] = self.maxtime;
     //3.发送请求
     [self.manager GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -216,7 +219,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
         [self.tableView reloadData];
         [self footerEndRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        XMGLog(@"%@",error);
     }];
 }
 
