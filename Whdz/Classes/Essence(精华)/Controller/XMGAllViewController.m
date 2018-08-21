@@ -23,7 +23,10 @@
 @property (nonatomic, copy) NSString *maxtime;
 
 /** 所有的帖子数据 */
-@property (nonatomic, strong) NSMutableArray *topics;
+@property (nonatomic, strong) NSMutableArray<XMGTopic *> *topics;
+
+/** 请求管理者 */
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
 
 /** 下拉刷新控件 */
 @property (nonatomic, weak) UIView *header;
@@ -44,6 +47,14 @@
 
 /* cell的重用标识 */
 static NSString * const XMGTopicCellId = @"XMGTopicCellId";
+
+- (AFHTTPSessionManager *)manager {
+    if (!_manager) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -146,15 +157,15 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
  */
 - (void)loadNewTopics
 {
-    //1.创建请求会话管理者
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    // 1.取消之前的请求
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
     //2.拼接参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
     params[@"type"] = @29;
     //3.发送请求
-    [mgr GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.manager GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         //存储maxtime
         self.maxtime = responseObject[@"info"][@"maxtime"];
         //字典数组->模型数组
@@ -183,9 +194,8 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
  */
 - (void)loadMoreTopics
 {
-    XMGLog(@"发送请求给服务器 - 加载更多数据");
-    //1.创建请求会话管理者
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    // 1.取消之前的请求
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
     //2.拼接参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
@@ -193,7 +203,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     params[@"type"] = @29;
     params[@"maxtime"] = self.maxtime;
     //3.发送请求
-    [mgr GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.manager GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         // 存储maxtime
         self.maxtime = responseObject[@"info"][@"maxtime"];
         //字典数组 ---> 模型数据
@@ -227,21 +237,8 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
 
 #pragma mark - 代理方法
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    XMGTopic *topic = self.topics[indexPath.row];
     
-    CGFloat cellHeight = 0;
-    
-    // 文字的Y值
-    cellHeight += 55;
-    
-    // 文字的高度
-    CGSize textMaxSize = CGSizeMake(XMGScreenW - 2 * XMGMarin, MAXFLOAT);
-    cellHeight += [topic.text sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:textMaxSize].height + XMGMarin;
-    
-    // 工具条
-    cellHeight += 35 + XMGMarin;
-    
-    return cellHeight;
+    return self.topics[indexPath.row].cellHeight;
 }
 
 /**
