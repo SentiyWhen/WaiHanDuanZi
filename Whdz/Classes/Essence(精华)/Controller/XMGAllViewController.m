@@ -52,7 +52,6 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     self.tableView.contentInset = UIEdgeInsetsMake( XMGTitlesViewH, 0, 0, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.rowHeight = 200;
     
     //注册cell
 //    [self.tableView registerClass:[XMGTopicCell class] forCellReuseIdentifier:XMGTopicCellId];
@@ -153,7 +152,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @1;
+    params[@"type"] = @29;
     //3.发送请求
     [mgr GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         //存储maxtime
@@ -168,8 +167,6 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
         [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
         //结束刷新
         [self headerEndRefreshing];
-        
-        
     }];
     
     /*
@@ -193,7 +190,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @1;
+    params[@"type"] = @29;
     params[@"maxtime"] = self.maxtime;
     //3.发送请求
     [mgr GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -229,6 +226,24 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
 }
 
 #pragma mark - 代理方法
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    XMGTopic *topic = self.topics[indexPath.row];
+    
+    CGFloat cellHeight = 0;
+    
+    // 文字的Y值
+    cellHeight += 55;
+    
+    // 文字的高度
+    CGSize textMaxSize = CGSizeMake(XMGScreenW - 2 * XMGMarin, MAXFLOAT);
+    cellHeight += [topic.text sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:textMaxSize].height + XMGMarin;
+    
+    // 工具条
+    cellHeight += 35 + XMGMarin;
+    
+    return cellHeight;
+}
+
 /**
  *  用户松开scrollView时调用
  */
