@@ -67,6 +67,7 @@
 		F8B534CF21250BD500686925 /* XMGConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B534CE21250BD500686925 /* XMGConst.m */; };
 		F8E801662126A7B5000702F2 /* XMGTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E801652126A7B5000702F2 /* XMGTopic.m */; };
 		F8E801692126B4F7000702F2 /* XMGTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E801682126B4F7000702F2 /* XMGTopicCell.m */; };
+		F8E80177212BB358000702F2 /* XMGTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80176212BB358000702F2 /* XMGTopicCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +185,7 @@
 		F8E801652126A7B5000702F2 /* XMGTopic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopic.m; sourceTree = "<group>"; };
 		F8E801672126B4F7000702F2 /* XMGTopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTopicCell.h; sourceTree = "<group>"; };
 		F8E801682126B4F7000702F2 /* XMGTopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopicCell.m; sourceTree = "<group>"; };
+		F8E80176212BB358000702F2 /* XMGTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMGTopicCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,14 +331,14 @@
 		F8B5342821217DAE00686925 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				F8B5342921217DAE00686925 /* UIView+Frame.m */,
-				F8B5342A21217DAE00686925 /* UIImage+Image.m */,
-				F8B5342B21217DAE00686925 /* UIBarButtonItem+Item.h */,
-				F8B5342C21217DAE00686925 /* UITextField+Placeholder.m */,
-				F8B5342D21217DAE00686925 /* UIBarButtonItem+Item.m */,
 				F8B5342E21217DAE00686925 /* UIImage+Image.h */,
-				F8B5342F21217DAE00686925 /* UIView+Frame.h */,
+				F8B5342A21217DAE00686925 /* UIImage+Image.m */,
 				F8B5343021217DAE00686925 /* UITextField+Placeholder.h */,
+				F8B5342C21217DAE00686925 /* UITextField+Placeholder.m */,
+				F8B5342B21217DAE00686925 /* UIBarButtonItem+Item.h */,
+				F8B5342D21217DAE00686925 /* UIBarButtonItem+Item.m */,
+				F8B5342921217DAE00686925 /* UIView+Frame.m */,
+				F8B5342F21217DAE00686925 /* UIView+Frame.h */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -607,6 +609,7 @@
 				F8B534BC2123CCF300686925 /* XMGTitleButton.m */,
 				F8E801672126B4F7000702F2 /* XMGTopicCell.h */,
 				F8E801682126B4F7000702F2 /* XMGTopicCell.m */,
+				F8E80176212BB358000702F2 /* XMGTopicCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8E80177212BB358000702F2 /* XMGTopicCell.xib in Resources */,
 				F8B5349B21217DAE00686925 /* LaunchImage-700-568h@2x.png in Resources */,
 				F8B5348B21217DAE00686925 /* XMGSubTagCell.xib in Resources */,
 				F8B5349621217DAE00686925 /* LaunchImage@2x.png in Resources */,

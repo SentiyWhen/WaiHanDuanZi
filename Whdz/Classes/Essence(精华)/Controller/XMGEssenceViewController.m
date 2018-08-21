@@ -98,7 +98,7 @@
 - (void)setupTitlesView {
     UIView *titlesView = [[UIView alloc] init];
     titlesView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
-    titlesView.frame = CGRectMake(0, 64, self.view.xmg_width, 35);
+    titlesView.frame = CGRectMake(0, XMGNavMaxY, self.view.xmg_width, XMGTitlesViewH);
     [self.view addSubview:titlesView];
     self.titlesView = titlesView;
     
@@ -153,7 +153,7 @@
     self.previousClickedTitleButton = firstTitleButton;
     
     [firstTitleButton.titleLabel sizeToFit];
-    self.titleUnderline.xmg_width = firstTitleButton.titleLabel.xmg_width + 10;
+    self.titleUnderline.xmg_width = firstTitleButton.titleLabel.xmg_width + XMGMarin;
     self.titleUnderline.xmg_centerX = firstTitleButton.xmg_centerX;
 }
 

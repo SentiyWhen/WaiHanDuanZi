@@ -49,7 +49,7 @@ static CGFloat const margin = 1;
     self.tableView.sectionHeaderHeight = 0;
     self.tableView.sectionFooterHeight = 10;
     
-    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(XMGMarin - 35, 0, 0, 0);
 }
 
 #pragma mark - 请求数据

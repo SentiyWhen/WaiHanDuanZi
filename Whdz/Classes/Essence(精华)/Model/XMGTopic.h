@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, XMGTopicType) {
+    /** 全部 */
+    XMGTopicTypeAll = 1,
+    /** 图片 */
+    XMGTopicTypePicture = 10,
+    /** 段子 */
+    XMGTopicTypeWord = 29,
+    /** 声音 */
+    XMGTopicTypeVoice = 31,
+    /** 视频 */
+    XMGTopicTypeVideo = 41
+};
+
 @interface XMGTopic : NSObject
 
 /** 用户的名字 */
@@ -27,5 +40,8 @@
 @property (nonatomic, assign) NSInteger repost;
 /** 评论数量 */
 @property (nonatomic, assign) NSInteger comment;
+
+/** 帖子的类型 10为图片 29为段子 31为音频 41为视频 */
+@property (nonatomic, assign) NSInteger type;
 
 @end

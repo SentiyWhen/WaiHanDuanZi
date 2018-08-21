@@ -14,6 +14,7 @@
 #import <MJExtension.h>
 #import "XMGTopic.h"
 #import <SVProgressHUD.h>
+#import "XMGTopicCell.h"
 
 
 @interface XMGAllViewController ()
@@ -41,13 +42,23 @@
 
 @implementation XMGAllViewController
 
+/* cell的重用标识 */
+static NSString * const XMGTopicCellId = @"XMGTopicCellId";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = XMGRandomColor;
-    
+    self.view.backgroundColor = XMGGrayColor(206);
     self.tableView.contentInset = UIEdgeInsetsMake( XMGTitlesViewH, 0, 0, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight = 200;
+    
+    //注册cell
+//    [self.tableView registerClass:[XMGTopicCell class] forCellReuseIdentifier:XMGTopicCellId];
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass([XMGTopicCell class]) bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:XMGTopicCellId];
+
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClick) name:XMGTabBarButtonDidRepeatClickNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleButtonDidRepeatClick) name:XMGTitleButtonDidRepeatClickNotification object:nil];
@@ -210,15 +221,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-        cell.backgroundColor = [UIColor clearColor];
-    }
-    XMGTopic *topic = self.topics[indexPath.row];
-    cell.textLabel.text = topic.name;
-    cell.detailTextLabel.text = topic.text;
+    XMGTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:XMGTopicCellId];
+    
+    cell.topic = self.topics[indexPath.row];
+    
     return cell;
 }
 
