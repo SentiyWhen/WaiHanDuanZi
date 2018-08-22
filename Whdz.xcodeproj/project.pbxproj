@@ -72,6 +72,7 @@
 		F8E80180212C288A000702F2 /* XMGTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8017F212C288A000702F2 /* XMGTopicPictureView.m */; };
 		F8E80182212C28E9000702F2 /* XMGTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80181212C28E9000702F2 /* XMGTopicVideoView.xib */; };
 		F8E80186212C2902000702F2 /* XMGTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80185212C2902000702F2 /* XMGTopicPictureView.xib */; };
+		F8E8018F212D0E88000702F2 /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8018D212D0E88000702F2 /* UIImageView+Download.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,8 @@
 		F8E8017F212C288A000702F2 /* XMGTopicPictureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopicPictureView.m; sourceTree = "<group>"; };
 		F8E80181212C28E9000702F2 /* XMGTopicVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGTopicVideoView.xib; sourceTree = "<group>"; };
 		F8E80185212C2902000702F2 /* XMGTopicPictureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGTopicPictureView.xib; sourceTree = "<group>"; };
+		F8E8018D212D0E88000702F2 /* UIImageView+Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Download.m"; sourceTree = "<group>"; };
+		F8E8018E212D0E88000702F2 /* UIImageView+Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Download.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +344,8 @@
 		F8B5342821217DAE00686925 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				F8E8018E212D0E88000702F2 /* UIImageView+Download.h */,
+				F8E8018D212D0E88000702F2 /* UIImageView+Download.m */,
 				F8B5342E21217DAE00686925 /* UIImage+Image.h */,
 				F8B5342A21217DAE00686925 /* UIImage+Image.m */,
 				F8B5343021217DAE00686925 /* UITextField+Placeholder.h */,
@@ -846,6 +851,7 @@
 				F8B5349F21217DAE00686925 /* XMGAdViewController.m in Sources */,
 				F8B534A021217DAE00686925 /* XMGADItem.m in Sources */,
 				F8B534A721217DAE00686925 /* XMGSquareCell.m in Sources */,
+				F8E8018F212D0E88000702F2 /* UIImageView+Download.m in Sources */,
 				F8B534A521217DAE00686925 /* XMGMeViewController.m in Sources */,
 				F8B534AC2122633C00686925 /* XMGSquareItem.m in Sources */,
 				F8B534A321217DAE00686925 /* XMGTabBar.m in Sources */,
