@@ -24,6 +24,16 @@
     CGSize textMaxSize = CGSizeMake(XMGScreenW - 2 * XMGMarin, MAXFLOAT);
     _cellHeight += [self.text boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size.height + XMGMarin;
     
+    //中间内容
+    if (self.type != XMGTopicTypeWord) {
+        CGFloat middleW = textMaxSize.width;
+        CGFloat middleH = middleW * self.height / self.width;
+        CGFloat middleX = XMGMarin;
+        CGFloat middleY = _cellHeight;
+        self.middleFrame = CGRectMake(middleX, middleY, middleW, middleH);
+        _cellHeight += middleH + XMGMarin;
+    }
+    
     // 最新评论
     if (self.top_cmt.count) {
         //标题

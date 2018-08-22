@@ -100,9 +100,6 @@
     if (topic.type == XMGTopicTypePicture) { // 图片
         self.pictureView.hidden = NO;
         self.videoView.hidden = YES;
-    } else if (topic.type == XMGTopicTypeVoice) { // 声音
-        self.pictureView.hidden = YES;
-        self.videoView.hidden = YES;
     } else if (topic.type == XMGTopicTypeVideo) { // 视频
         self.pictureView.hidden = YES;
         self.videoView.hidden = NO;
@@ -111,6 +108,17 @@
         self.videoView.hidden = YES;
     }
     
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    if (self.topic.type == XMGTopicTypePicture) { // 图片
+        self.pictureView.frame = self.topic.middleFrame;
+    } else if (self.topic.type == XMGTopicTypeVideo) { // 视频
+        self.videoView.frame = self.topic.middleFrame;
+    }
 }
 
 /**
