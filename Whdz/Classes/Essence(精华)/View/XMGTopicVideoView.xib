@@ -11,12 +11,54 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XMGTopicVideoView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="340" height="127"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="XMGTopicVideoView">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="222"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="0.86669720559999996" blue="0.27428035569999998" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jtB-V4-Qnv">
+                    <rect key="frame" x="0.0" y="0.0" width="343" height="222"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyO-3c-LnP">
+                    <rect key="frame" x="136" y="75.5" width="71" height="71"/>
+                    <state key="normal" image="video-play"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="888播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebh-iJ-EaO">
+                    <rect key="frame" x="284" y="0.0" width="59" height="18"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk3-Sv-e3P">
+                    <rect key="frame" x="301.5" y="204" width="41.5" height="18"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Ebh-iJ-EaO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2Em-tn-69k"/>
+                <constraint firstAttribute="trailing" secondItem="jtB-V4-Qnv" secondAttribute="trailing" id="45V-tb-dba"/>
+                <constraint firstItem="PyO-3c-LnP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8Oj-m6-cRt"/>
+                <constraint firstAttribute="trailing" secondItem="Fk3-Sv-e3P" secondAttribute="trailing" id="Glv-88-8jL"/>
+                <constraint firstItem="jtB-V4-Qnv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="O2M-MV-j0i"/>
+                <constraint firstItem="PyO-3c-LnP" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="R7d-Jn-7sV"/>
+                <constraint firstItem="jtB-V4-Qnv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Yrk-Zy-hp3"/>
+                <constraint firstAttribute="bottom" secondItem="jtB-V4-Qnv" secondAttribute="bottom" id="aau-fl-Ipx"/>
+                <constraint firstAttribute="trailing" secondItem="Ebh-iJ-EaO" secondAttribute="trailing" id="e7m-ES-g8H"/>
+                <constraint firstAttribute="bottom" secondItem="Fk3-Sv-e3P" secondAttribute="bottom" id="wh7-b7-Jap"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="jtB-V4-Qnv" id="3mn-ny-zcp"/>
+                <outlet property="playcountLabel" destination="Ebh-iJ-EaO" id="BA9-YC-8ZQ"/>
+                <outlet property="videotimeLabel" destination="Fk3-Sv-e3P" id="7hc-SD-bFV"/>
+            </connections>
             <point key="canvasLocation" x="8" y="-380.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="video-play" width="71" height="71"/>
+    </resources>
 </document>

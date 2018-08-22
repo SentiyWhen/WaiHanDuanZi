@@ -101,6 +101,7 @@
         self.pictureView.hidden = NO;
         self.videoView.hidden = YES;
     } else if (topic.type == XMGTopicTypeVideo) { // 视频
+        self.videoView.topic = topic;
         self.pictureView.hidden = YES;
         self.videoView.hidden = NO;
     } else if (topic.type == XMGTopicTypeWord) { // 段子

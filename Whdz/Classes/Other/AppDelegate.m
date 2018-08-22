@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "XMGTabBarController.h"
 #import "XMGAdViewController.h"
+#import <AFNetworking.h>
 
 /*
  优先级:LaunchScreen > LaunchImage
@@ -50,6 +51,9 @@
     
     //3.显示窗口
     [self.window makeKeyAndVisible];
+    
+    // 4.开始监控网络状况
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     return YES;
 }
