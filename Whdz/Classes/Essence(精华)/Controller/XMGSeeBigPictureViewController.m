@@ -19,6 +19,7 @@
 #import "XMGSeeBigPictureViewController.h"
 #import "XMGTopic.h"
 #import <UIImageView+WebCache.h>
+#import <SVProgressHUD.h>
 
 @interface XMGSeeBigPictureViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
@@ -78,7 +79,16 @@
 }
 
 - (IBAction)save {
+    UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+}
 
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    if (error) {
+        [SVProgressHUD showErrorWithStatus:@"保存失败！"];
+    } else {
+        [SVProgressHUD showSuccessWithStatus:@"保存成功！"];
+    }
 }
 
 //- (UIScrollView *)scrollView
