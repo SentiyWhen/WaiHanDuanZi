@@ -15,6 +15,7 @@
 #import "XMGTopic.h"
 #import <SVProgressHUD.h>
 #import "XMGTopicCell.h"
+#import <SDImageCache.h>
 
 
 @interface XMGAllViewController ()
@@ -300,6 +301,9 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     
     // 处理footer
     [self dealFooter];
+    
+    // 清除缓存
+    [[SDImageCache sharedImageCache] clearMemory];
 }
 
 /**
