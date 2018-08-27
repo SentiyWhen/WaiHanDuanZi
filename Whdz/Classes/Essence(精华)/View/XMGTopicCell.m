@@ -93,6 +93,7 @@
     
     // 中间的内容
     if (topic.type == XMGTopicTypePicture) { // 图片
+        self.pictureView.topic = topic;
         self.pictureView.hidden = NO;
         self.videoView.hidden = YES;
     } else if (topic.type == XMGTopicTypeVideo) { // 视频

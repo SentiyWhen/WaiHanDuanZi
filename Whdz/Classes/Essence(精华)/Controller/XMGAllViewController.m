@@ -41,12 +41,21 @@
 @property (nonatomic, weak) UILabel *footerLabel;
 /** 上拉刷新控件是否正在刷新 */
 @property (nonatomic, assign, getter=isFooterRefreshing) BOOL footerRefreshing;
+
+// 有了方法声明，点语法才会有智能提示
+- (XMGTopicType)type;
+
 @end
 
 @implementation XMGAllViewController
 
 /* cell的重用标识 */
 static NSString * const XMGTopicCellId = @"XMGTopicCellId";
+
+- (XMGTopicType)type
+{
+    return XMGTopicTypePicture;
+}
 
 - (AFHTTPSessionManager *)manager {
     if (!_manager) {
@@ -165,7 +174,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"41";
+    params[@"type"] = @(self.type);
     //3.发送请求
     [self.manager GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //        XMGAFNWriteToPlist(new_topics1)
@@ -205,7 +214,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"41";
+    params[@"type"] = @(self.type);
     params[@"maxtime"] = self.maxtime;
     //3.发送请求
     [self.manager GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

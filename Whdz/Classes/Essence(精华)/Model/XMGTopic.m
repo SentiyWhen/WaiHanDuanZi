@@ -28,6 +28,10 @@
     if (self.type != XMGTopicTypeWord) {
         CGFloat middleW = textMaxSize.width;
         CGFloat middleH = middleW * self.height / self.width;
+        if (middleH >= XMGScreenH) { // 显示的图片高度超过一个屏幕，就是超长图片
+            middleH = 200;
+            self.bigPicture = YES;
+        }
         CGFloat middleX = XMGMarin;
         CGFloat middleY = _cellHeight;
         self.middleFrame = CGRectMake(middleX, middleY, middleW, middleH);
