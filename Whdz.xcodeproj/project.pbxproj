@@ -73,6 +73,8 @@
 		F8E80182212C28E9000702F2 /* XMGTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80181212C28E9000702F2 /* XMGTopicVideoView.xib */; };
 		F8E80186212C2902000702F2 /* XMGTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E80185212C2902000702F2 /* XMGTopicPictureView.xib */; };
 		F8E8018F212D0E88000702F2 /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8018D212D0E88000702F2 /* UIImageView+Download.m */; };
+		F8E8019321339E5A000702F2 /* XMGSeeBigPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E8019121339E59000702F2 /* XMGSeeBigPictureViewController.xib */; };
+		F8E8019421339E5A000702F2 /* XMGSeeBigPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8019221339E59000702F2 /* XMGSeeBigPictureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +201,9 @@
 		F8E80185212C2902000702F2 /* XMGTopicPictureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGTopicPictureView.xib; sourceTree = "<group>"; };
 		F8E8018D212D0E88000702F2 /* UIImageView+Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Download.m"; sourceTree = "<group>"; };
 		F8E8018E212D0E88000702F2 /* UIImageView+Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Download.h"; sourceTree = "<group>"; };
+		F8E8019021339E59000702F2 /* XMGSeeBigPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGSeeBigPictureViewController.h; sourceTree = "<group>"; };
+		F8E8019121339E59000702F2 /* XMGSeeBigPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMGSeeBigPictureViewController.xib; sourceTree = "<group>"; };
+		F8E8019221339E59000702F2 /* XMGSeeBigPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGSeeBigPictureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +316,9 @@
 		F8B5342321217DAE00686925 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F8E8019021339E59000702F2 /* XMGSeeBigPictureViewController.h */,
+				F8E8019221339E59000702F2 /* XMGSeeBigPictureViewController.m */,
+				F8E8019121339E59000702F2 /* XMGSeeBigPictureViewController.xib */,
 				F8B5342421217DAE00686925 /* XMGEssenceViewController.h */,
 				F8B5342521217DAE00686925 /* XMGEssenceViewController.m */,
 				F8B534BE2124140200686925 /* XMGAllViewController.h */,
@@ -733,6 +741,7 @@
 				F8B5348B21217DAE00686925 /* XMGSubTagCell.xib in Resources */,
 				F8B5349621217DAE00686925 /* LaunchImage@2x.png in Resources */,
 				F8E80182212C28E9000702F2 /* XMGTopicVideoView.xib in Resources */,
+				F8E8019321339E5A000702F2 /* XMGSeeBigPictureViewController.xib in Resources */,
 				F8E80186212C2902000702F2 /* XMGTopicPictureView.xib in Resources */,
 				F8B5349721217DAE00686925 /* LaunchImage-568h@2x.png in Resources */,
 				F8B5340A21217A3100686925 /* LaunchScreen.storyboard in Resources */,
@@ -823,6 +832,7 @@
 				F8B5349221217DAE00686925 /* XMGFastLoginView.m in Sources */,
 				F8B5348C21217DAE00686925 /* XMGLoginRegisterViewController.m in Sources */,
 				F8B5349321217DAE00686925 /* XMGLoginField.m in Sources */,
+				F8E8019421339E5A000702F2 /* XMGSeeBigPictureViewController.m in Sources */,
 				F8E801662126A7B5000702F2 /* XMGTopic.m in Sources */,
 				F8B5349421217DAE00686925 /* XMGLoginRegisterView.m in Sources */,
 				F8B534B82122B37D00686925 /* XMGFileTool.m in Sources */,
