@@ -1,15 +1,12 @@
 //
-//  XMGAllViewController.m
+//  XMGTopicViewController.m
 //  Whdz
 //
-//  Created by 张文文 on 2018/8/15.
+//  Created by 张文文 on 2018/8/28.
 //  Copyright © 2018年 zww. All rights reserved.
 //
 
-//self.tableView.contentInset = UIEdgeInsetsMake(XMGTitlesViewH, 0, 0, 0);
-//CGFloat ofsetY = self.tableView.contentSize.height + XMGTabBarH - self.tableView.xmg_height;
-
-#import "XMGAllViewController.h"
+#import "XMGTopicViewController.h"
 #import <AFNetworking.h>
 #import <MJExtension.h>
 #import "XMGTopic.h"
@@ -17,12 +14,15 @@
 #import "XMGTopicCell.h"
 #import <SDImageCache.h>
 
+//#import "XMGAllViewController.h"
+//#import "XMGVideoViewController.h"
+//#import "XMGVoiceViewController.h"
+//#import "XMGPictureViewController.h"
+//#import "XMGWordViewController.h"
 
-@interface XMGAllViewController ()
-
+@interface XMGTopicViewController ()
 /** 当前最后一条帖子数据的描述信息，专门用来加载下一页数据 */
 @property (nonatomic, copy) NSString *maxtime;
-
 /** 所有的帖子数据 */
 @property (nonatomic, strong) NSMutableArray<XMGTopic *> *topics;
 
@@ -44,43 +44,37 @@
 @property (nonatomic, assign, getter=isFooterRefreshing) BOOL footerRefreshing;
 
 // 有了方法声明，点语法才会有智能提示
-- (XMGTopicType)type;
-
+//- (XMGTopicType)type;
 @end
 
-@implementation XMGAllViewController
+@implementation XMGTopicViewController
+
+/** 在这里实现type方法，仅仅是为了消除警告 */
+- (XMGTopicType)type {return 0;}
 
 /* cell的重用标识 */
 static NSString * const XMGTopicCellId = @"XMGTopicCellId";
 
-- (XMGTopicType)type
+- (AFHTTPSessionManager *)manager
 {
-    return XMGTopicTypePicture;
-}
-
-- (AFHTTPSessionManager *)manager {
     if (!_manager) {
         _manager = [AFHTTPSessionManager manager];
     }
     return _manager;
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = XMGGrayColor(206);
-    self.tableView.contentInset = UIEdgeInsetsMake( XMGTitlesViewH, 0, 0, 0);
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(XMGNavMaxY + XMGTitlesViewH, 0, XMGTabBarH, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    // 设置cell的估算高度（每一行大约都是estimatedRowHeight）
-//    self.tableView.estimatedRowHeight = 100;
     
-    //注册cell
-//    [self.tableView registerClass:[XMGTopicCell class] forCellReuseIdentifier:XMGTopicCellId];
+    // 注册cell
     UINib *nib = [UINib nibWithNibName:NSStringFromClass([XMGTopicCell class]) bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:XMGTopicCellId];
-
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClick) name:XMGTabBarButtonDidRepeatClickNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleButtonDidRepeatClick) name:XMGTitleButtonDidRepeatClickNotification object:nil];
@@ -148,7 +142,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     // 重复点击的不是精华按钮
     if (self.view.window == nil) return;
     
-    // 显示在正中间的不是AllViewController
+    // 显示在正中间的不是VideoViewController
     if (self.tableView.scrollsToTop == NO) return;
     
     // 进入下拉刷新
@@ -164,6 +158,21 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
 }
 
 #pragma mark - 数据处理
+//- (XMGTopicType)type
+//{
+////    if ([self isKindOfClass:[XMGAllViewController class]]) return XMGTopicTypeAll;
+////    if ([self isKindOfClass:[XMGVideoViewController class]]) return XMGTopicTypeVideo;
+////    if ([self isKindOfClass:[XMGVoiceViewController class]]) return XMGTopicTypeVoice;
+////    if ([self isKindOfClass:[XMGPictureViewController class]]) return XMGTopicTypePicture;
+////    if ([self isKindOfClass:[XMGWordViewController class]]) return XMGTopicTypeWord;
+//
+////    if (self.class == [XMGAllViewController class]) return XMGTopicTypeAll;
+//
+//    if ([NSStringFromClass(self.class) isEqualToString:@"XMGAllViewController"]) return XMGTopicTypeAll;
+//
+//    return 0;
+//}
+
 /**
  *  发送请求给服务器，下拉刷新数据
  */
@@ -171,37 +180,34 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
 {
     // 1.取消之前的请求
     [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
-    //2.拼接参数
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
-    params[@"c"] = @"data";
-    params[@"type"] = @(self.type);
-    //3.发送请求
-    [self.manager GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        XMGAFNWriteToPlist(new_topics1)
-//        XMGLog(@"%@",responseObject);
-        //存储maxtime
+    
+    // 2.拼接参数
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"list";
+    parameters[@"c"] = @"data";
+    parameters[@"type"] = @(self.type);
+    
+    // 3.发送请求
+    [self.manager GET:XMGCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+        // 存储maxtime
         self.maxtime = responseObject[@"info"][@"maxtime"];
-        //字典数组->模型数组
+        
+        // 字典数组 -> 模型数据
         self.topics = [XMGTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-        //刷新表格
+        
+        // 刷新表格
         [self.tableView reloadData];
-        //结束刷新
+        
+        // 结束刷新
         [self headerEndRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        XMGLog(@"%@",error);
-        [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
-        //结束刷新
+        if (error.code != NSURLErrorCancelled) { // 并非是取消任务导致的error，其他网络问题导致的error
+            [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
+        }
+        
+        // 结束刷新
         [self headerEndRefreshing];
     }];
-    
-    /*
-     1.新建model  .h文件中添加属性
-     2.controller里导入model
-     3.controller里添加数组属性存储数据
-     4.使用MJExtension字典转模型
-     5.tableview数据源方法中 取出model并设置cell数据
-     */
 }
 
 /**
@@ -211,25 +217,36 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
 {
     // 1.取消之前的请求
     [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
-    //2.拼接参数
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
-    params[@"c"] = @"data";
-    params[@"type"] = @(self.type);
-    params[@"maxtime"] = self.maxtime;
-    //3.发送请求
-    [self.manager GET:XMGCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    
+    // 2.拼接参数
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"list";
+    parameters[@"c"] = @"data";
+    parameters[@"type"] = @(self.type);
+    parameters[@"maxtime"] = self.maxtime;
+    
+    // 3.发送请求
+    [self.manager GET:XMGCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
         // 存储maxtime
         self.maxtime = responseObject[@"info"][@"maxtime"];
-        //字典数组 ---> 模型数据
+        
+        // 字典数组 -> 模型数据
         NSArray *moreTopics = [XMGTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-        //累加到旧数组的后面
+        // 累加到旧数组的后面
         [self.topics addObjectsFromArray:moreTopics];
         
+        // 刷新表格
         [self.tableView reloadData];
+        
+        // 结束刷新
         [self footerEndRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        XMGLog(@"%@",error);
+        if (error.code != NSURLErrorCancelled) { // 并非是取消任务导致的error，其他网络问题导致的error
+            [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
+        }
+        
+        // 结束刷新
+        [self footerEndRefreshing];
     }];
 }
 
@@ -251,31 +268,8 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
 }
 
 #pragma mark - 代理方法
-// 所有cell的高度 -> contentSize.height -> 滚动条长度
-// 1000 * 20 -> contentSize.height -> 滚动条长度
-// contentSize.height -> 200 * 20 -> 16800
-/*
- 使用estimatedRowHeight的优缺点
- 1.优点
- 1> 可以降低tableView:heightForRowAtIndexPath:方法的调用频率
- 2> 将【计算cell高度的操作】延迟执行了（相当于cell高度的计算是懒加载的）
- 
- 2.缺点
- 1> 滚动条长度不准确、不稳定，甚至有卡顿效果（如果不使用estimatedRowHeight，滚动条的长度就是准确的）
- */
-
-/**
- 这个方法的特点：
- 1.默认情况下(没有设置estimatedRowHeight的情况下)
- 1> 每次刷新表格时，有多少数据，这个方法就一次性调用多少次（比如有100条数据，每次reloadData时，这个方法就会一次性调用100次）
- 2> 每当有cell进入屏幕范围内，就会调用一次这个方法
- 
- 2.设置estimatedRowHeight的情况下
- 1> 用到了（显示了）哪个cell，才会调用这个方法计算那个cell的高度（方法调用频率降低了）
- */
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return [self.topics[indexPath.row] cellHeight];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     return self.topics[indexPath.row].cellHeight;
 }
 
@@ -284,11 +278,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
  */
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    //    // 如果正在下拉刷新，直接返回
-    //    if (self.isHeaderRefreshing) return;
-    
     CGFloat offsetY = - (self.tableView.contentInset.top + self.header.xmg_height);
-//    XMGLog(@"%f---%f----%f",self.tableView.contentInset.top, self.header.xmg_height,self.tableView.contentOffset.y);
     if (self.tableView.contentOffset.y <= offsetY) { // header已经完全出现
         [self headerBeginRefreshing];
     }
@@ -302,7 +292,7 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
     // 处理footer
     [self dealFooter];
     
-    // 清除缓存
+    // 清除内存缓存
     [[SDImageCache sharedImageCache] clearMemory];
 }
 
@@ -332,12 +322,9 @@ static NSString * const XMGTopicCellId = @"XMGTopicCellId";
 {
     // 还没有任何内容的时候，不需要判断
     if (self.tableView.contentSize.height == 0) return;
-    //
-    //    // 如果正在刷新，直接返回
-    //    if (self.isFooterRefreshing) return;
     
     // 当scrollView的偏移量y值 >= offsetY时，代表footer已经完全出现
-    CGFloat ofsetY = self.tableView.contentSize.height + XMGTabBarH - self.tableView.xmg_height;
+    CGFloat ofsetY = self.tableView.contentSize.height + self.tableView.contentInset.bottom - self.tableView.xmg_height;
     if (self.tableView.contentOffset.y >= ofsetY
         && self.tableView.contentOffset.y > - (self.tableView.contentInset.top)) { // footer完全出现，并且是往上拖拽
         [self footerBeginRefreshing];

@@ -75,6 +75,7 @@
 		F8E8018F212D0E88000702F2 /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8018D212D0E88000702F2 /* UIImageView+Download.m */; };
 		F8E8019321339E5A000702F2 /* XMGSeeBigPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E8019121339E59000702F2 /* XMGSeeBigPictureViewController.xib */; };
 		F8E8019421339E5A000702F2 /* XMGSeeBigPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8019221339E59000702F2 /* XMGSeeBigPictureViewController.m */; };
+		F8E8019721352D70000702F2 /* XMGTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8019621352D6F000702F2 /* XMGTopicViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +205,8 @@
 		F8E8019021339E59000702F2 /* XMGSeeBigPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGSeeBigPictureViewController.h; sourceTree = "<group>"; };
 		F8E8019121339E59000702F2 /* XMGSeeBigPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMGSeeBigPictureViewController.xib; sourceTree = "<group>"; };
 		F8E8019221339E59000702F2 /* XMGSeeBigPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGSeeBigPictureViewController.m; sourceTree = "<group>"; };
+		F8E8019521352D6F000702F2 /* XMGTopicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTopicViewController.h; sourceTree = "<group>"; };
+		F8E8019621352D6F000702F2 /* XMGTopicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +309,7 @@
 		F8B5342221217DAE00686925 /* Essence(精华) */ = {
 			isa = PBXGroup;
 			children = (
+				F8E8019921352D81000702F2 /* Topic */,
 				F8E801632126A78F000702F2 /* Model */,
 				F8B534BA2123CCD400686925 /* View */,
 				F8B5342321217DAE00686925 /* Controller */,
@@ -321,16 +325,6 @@
 				F8E8019121339E59000702F2 /* XMGSeeBigPictureViewController.xib */,
 				F8B5342421217DAE00686925 /* XMGEssenceViewController.h */,
 				F8B5342521217DAE00686925 /* XMGEssenceViewController.m */,
-				F8B534BE2124140200686925 /* XMGAllViewController.h */,
-				F8B534BF2124140200686925 /* XMGAllViewController.m */,
-				F8B534C12124141D00686925 /* XMGVideoViewController.h */,
-				F8B534C22124141D00686925 /* XMGVideoViewController.m */,
-				F8B534C42124142B00686925 /* XMGVoiceViewController.h */,
-				F8B534C52124142B00686925 /* XMGVoiceViewController.m */,
-				F8B534C72124144700686925 /* XMGPictureViewController.h */,
-				F8B534C82124144700686925 /* XMGPictureViewController.m */,
-				F8B534CA2124145900686925 /* XMGWordViewController.h */,
-				F8B534CB2124145900686925 /* XMGWordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -652,6 +646,25 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F8E8019921352D81000702F2 /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				F8E8019521352D6F000702F2 /* XMGTopicViewController.h */,
+				F8E8019621352D6F000702F2 /* XMGTopicViewController.m */,
+				F8B534BE2124140200686925 /* XMGAllViewController.h */,
+				F8B534BF2124140200686925 /* XMGAllViewController.m */,
+				F8B534C12124141D00686925 /* XMGVideoViewController.h */,
+				F8B534C22124141D00686925 /* XMGVideoViewController.m */,
+				F8B534C42124142B00686925 /* XMGVoiceViewController.h */,
+				F8B534C52124142B00686925 /* XMGVoiceViewController.m */,
+				F8B534C72124144700686925 /* XMGPictureViewController.h */,
+				F8B534C82124144700686925 /* XMGPictureViewController.m */,
+				F8B534CA2124145900686925 /* XMGWordViewController.h */,
+				F8B534CB2124145900686925 /* XMGWordViewController.m */,
+			);
+			path = Topic;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -846,6 +859,7 @@
 				F8B5348321217DAE00686925 /* UITextField+Placeholder.m in Sources */,
 				F8B5348121217DAE00686925 /* UIView+Frame.m in Sources */,
 				F8B5349D21217DAE00686925 /* XMGSettingViewController.m in Sources */,
+				F8E8019721352D70000702F2 /* XMGTopicViewController.m in Sources */,
 				F8B5348921217DAE00686925 /* XMGSubTagItem.m in Sources */,
 				F8B5348521217DAE00686925 /* main.m in Sources */,
 				F8B534C02124140200686925 /* XMGAllViewController.m in Sources */,

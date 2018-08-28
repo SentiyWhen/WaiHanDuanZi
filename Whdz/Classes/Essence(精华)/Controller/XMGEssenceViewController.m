@@ -62,7 +62,7 @@
 - (void)setupAllChildVcs {
     [self addChildViewController:[[XMGAllViewController alloc] init]];
     [self addChildViewController:[[XMGVideoViewController alloc] init]];
-    [self addChildViewController:[[XMGVoiceViewController alloc] init]];
+//    [self addChildViewController:[[XMGVoiceViewController alloc] init]];
     [self addChildViewController:[[XMGPictureViewController alloc] init]];
     [self addChildViewController:[[XMGWordViewController alloc] init]];
 }
@@ -110,7 +110,7 @@
 }
 
 - (void)setupTitlesButtons {
-    NSArray *titles = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
+    NSArray *titles = @[@"全部",@"视频",@"图片",@"段子"];
     NSUInteger count = titles.count;
     //标题按钮尺寸
     CGFloat titleButtonW = self.titlesView.xmg_width / count;
