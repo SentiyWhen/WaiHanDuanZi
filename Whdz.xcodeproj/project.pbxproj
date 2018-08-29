@@ -510,9 +510,9 @@
 		F8B5346921217DAE00686925 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F8B5346C21217DAE00686925 /* XMGNavigationViewController.h */,
 				F8B5346A21217DAE00686925 /* XMGNavigationViewController.m */,
 				F8B5346B21217DAE00686925 /* XMGTabBarController.h */,
-				F8B5346C21217DAE00686925 /* XMGNavigationViewController.h */,
 				F8B5346D21217DAE00686925 /* XMGTabBarController.m */,
 			);
 			path = Controller;
