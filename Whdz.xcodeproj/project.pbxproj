@@ -76,6 +76,7 @@
 		F8E8019321339E5A000702F2 /* XMGSeeBigPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E8019121339E59000702F2 /* XMGSeeBigPictureViewController.xib */; };
 		F8E8019421339E5A000702F2 /* XMGSeeBigPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8019221339E59000702F2 /* XMGSeeBigPictureViewController.m */; };
 		F8E8019721352D70000702F2 /* XMGTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8019621352D6F000702F2 /* XMGTopicViewController.m */; };
+		F8E8019C213648EF000702F2 /* XMGHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E8019B213648EF000702F2 /* XMGHTTPSessionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +208,8 @@
 		F8E8019221339E59000702F2 /* XMGSeeBigPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGSeeBigPictureViewController.m; sourceTree = "<group>"; };
 		F8E8019521352D6F000702F2 /* XMGTopicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTopicViewController.h; sourceTree = "<group>"; };
 		F8E8019621352D6F000702F2 /* XMGTopicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTopicViewController.m; sourceTree = "<group>"; };
+		F8E8019A213648EF000702F2 /* XMGHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGHTTPSessionManager.h; sourceTree = "<group>"; };
+		F8E8019B213648EF000702F2 /* XMGHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGHTTPSessionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -501,6 +504,8 @@
 		F8B5346821217DAE00686925 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				F8E8019A213648EF000702F2 /* XMGHTTPSessionManager.h */,
+				F8E8019B213648EF000702F2 /* XMGHTTPSessionManager.m */,
 				F8B5346921217DAE00686925 /* Controller */,
 				F8B5346E21217DAE00686925 /* View */,
 			);
@@ -862,6 +867,7 @@
 				F8E8019721352D70000702F2 /* XMGTopicViewController.m in Sources */,
 				F8B5348921217DAE00686925 /* XMGSubTagItem.m in Sources */,
 				F8B5348521217DAE00686925 /* main.m in Sources */,
+				F8E8019C213648EF000702F2 /* XMGHTTPSessionManager.m in Sources */,
 				F8B534C02124140200686925 /* XMGAllViewController.m in Sources */,
 				F8B5348021217DAE00686925 /* XMGEssenceViewController.m in Sources */,
 				F8B5348721217DAE00686925 /* XMGNewViewController.m in Sources */,

@@ -14,6 +14,7 @@
 #import "XMGTopicCell.h"
 #import <SDImageCache.h>
 #import <MJRefresh/MJRefresh.h>
+#import "XMGHTTPSessionManager.h"
 
 //#import "XMGAllViewController.h"
 //#import "XMGVideoViewController.h"
@@ -28,7 +29,7 @@
 @property (nonatomic, strong) NSMutableArray<XMGTopic *> *topics;
 
 /** 请求管理者 */
-@property (nonatomic, strong) AFHTTPSessionManager *manager;
+@property (nonatomic, strong) XMGHTTPSessionManager *manager;
 
 // 有了方法声明，点语法才会有智能提示
 //- (XMGTopicType)type;
@@ -42,10 +43,10 @@
 /* cell的重用标识 */
 static NSString * const XMGTopicCellId = @"XMGTopicCellId";
 
-- (AFHTTPSessionManager *)manager
+- (XMGHTTPSessionManager *)manager
 {
     if (!_manager) {
-        _manager = [AFHTTPSessionManager manager];
+        _manager = [XMGHTTPSessionManager manager];
     }
     return _manager;
 }
