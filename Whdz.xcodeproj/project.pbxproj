@@ -1044,7 +1044,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VN2WB3SJ34;
+				DEVELOPMENT_TEAM = V8443W6872;
 				GCC_PREFIX_HEADER = Whdz/Classes/Other/Whdz.pch;
 				INFOPLIST_FILE = Whdz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1052,7 +1052,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zww.Whdz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1zww.Whdz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1065,7 +1065,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VN2WB3SJ34;
+				DEVELOPMENT_TEAM = V8443W6872;
 				GCC_PREFIX_HEADER = Whdz/Classes/Other/Whdz.pch;
 				INFOPLIST_FILE = Whdz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1073,7 +1073,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zww.Whdz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1zww.Whdz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

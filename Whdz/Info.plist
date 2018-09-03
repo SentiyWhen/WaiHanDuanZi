@@ -2,19 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>ce</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>1</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>如何</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>怎样</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -33,6 +20,19 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>怎样</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>如何</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>1</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>ce</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
